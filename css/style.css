@@ -94,7 +94,7 @@ body > main {
 
 .navbar .navbar-extra a {
   color: #fff;
-  margin: 0 0.5 rem;
+  margin: 0 0.5rem;
 }
 
 .navbar .navbar-extra a:hover {
@@ -457,8 +457,8 @@ footer .credit a {
   .navbar .navbar-nav a {
     color: var(--bg);
     display: block;
-    margin: 1.5 rem;
-    padding: 0.5 rem;
+    margin: 1.5rem;
+    padding: 0.5rem;
     font-size: 2rem;
   }
 
