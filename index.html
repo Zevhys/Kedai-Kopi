@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -36,10 +37,18 @@
     </div>
 
     <div class="navbar-extra">
-      <a href="#" id="search"><i data-feather="search"></i></a>
+      <a href="#" id="search-button"><i data-feather="search"></i></a>
       <a href="#" id="shopping-bag"><i data-feather="shopping-bag"></i></a>
-      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+      <a id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
+
+    <!-- Search From Start -->
+    <div class="search-form">
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box"><i data-feather="search"></i></label>
+    </div>
+    <!-- Search From End -->
+
   </nav>
   <!-- Navbar End -->
 
@@ -140,20 +149,29 @@
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0447507599315!2d114.62045807391704!3d-3.3391146413135626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de426ad88b70699%3A0xd64db9b1570ac5ea!2sJl.%20Simp.%20Dharma%20Bakti.%20II%2C%20Pemurus%20Luar%2C%20Kec.%20Banjarmasin%20Tim.%2C%20Kota%20Banjarmasin%2C%20Kalimantan%20Selatan%2070238!5e0!3m2!1sid!2sid!4v1699954786722!5m2!1sid!2sid"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
-      <form action="">
+      <form action="" name="kedai-kopi-form">
         <div class="input-group">
           <i data-feather="users"></i>
-          <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" />
+          <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" name="nama"
+            pattern="^([A-Za-z ])(?!\s+$).+" title="Masukkan nama yang valid (huruf alfabet dan spasi)" />
         </div>
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input type="text" placeholder="Gmail" required spellcheck="false" />
+          <input type="email" placeholder="Gmail" required spellcheck="false" name="email" maxlength="50" />
         </div>
         <div class="input-group">
           <i data-feather="message-square"></i>
-          <input type="text" placeholder="Isi Pesan" minlength="5" maxlength="500" required spellcheck="false" />
+          <input type="text" placeholder="Isi Pesan" minlength="30" maxlength="500" required spellcheck="false"
+            pattern="^(?!\s+$).+" title="Masukkan Pesan yang valid (huruf alfabet dan spasi)" name="pesan" />
         </div>
-        <button type="submit" class="btn">Kirim Pesan</button>
+        <div>
+
+          <button id="submit-btn" type="submit" class="btn">
+            <img src="https://s2.svgbox.net/loaders.svg?ic=bars&color=white" width="32" height="32" id="submit-btn-load"
+              class="hidden">
+            <span id="submit-btn-msg">Kirim Pesan</span>
+          </button>
+        </div>
       </form>
     </div>
   </section>
@@ -161,20 +179,21 @@
 
   <!-- Footer Start -->
   <footer>
-    <div class="socials" id="footer">
-      <a href="#"><i data-feather="instagram"></i></a>
-      <a href="#"><i data-feather="twitter"></i></a>
-      <a href="#"><i data-feather="facebook"></i></a>
+    <div class="socials">
+      <a><i data-feather="instagram"></i></a>
+      <a><i data-feather="twitter"></i></a>
+      <a><i data-feather="facebook"></i></a>
+      <a><i data-feather="youtube"></i></a>
     </div>
 
-    <div class="links" id="footer">
+    <div class="links">
       <a href="#home">Home</a>
       <a href="#about">Tentang Kami</a>
       <a href="#Menu">Menu</a>
       <a href="#contact">Kontak</a>
     </div>
 
-    <div class="credit" id="footer">
+    <div class="credit">
       <p>Created by <a href="https://github.com/Zevhys" target="_blank" rel="noreferrer noopener">Rakha Djauhari</a> |
         Copyright &copy; 2024</p>
     </div>
