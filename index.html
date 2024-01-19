@@ -8,6 +8,9 @@
   <meta name="description" content="Coffe Shop Website">
   <title>Breeze Brew</title>
 
+  <!-- Sweet Alert -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.min.css">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +25,7 @@
 
   <!-- Logo Website -->
   <link rel="icon" href="img/logo-coffe.svg">
+
 </head>
 
 <body>
@@ -37,7 +41,7 @@
     </div>
 
     <div class="navbar-extra">
-      <a href="#" id="search-button"><i data-feather="search"></i></a>
+      <a id="search-button"><i data-feather="search"></i></a>
       <a href="#" id="shopping-bag"><i data-feather="shopping-bag"></i></a>
       <a id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
@@ -153,16 +157,19 @@
         <div class="input-group">
           <i data-feather="users"></i>
           <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" name="nama"
-            pattern="^([A-Za-z ])(?!\s+$).+" title="Masukkan nama yang valid (huruf alfabet dan spasi)" />
+            pattern="^([A-Za-z ])(?!\s+$).+" title="Masukkan nama yang valid (huruf alfabet dan spasi)"
+            autocomplete="off" />
         </div>
         <div class="input-group">
           <i data-feather="mail"></i>
-          <input type="email" placeholder="Gmail" required spellcheck="false" name="email" maxlength="50" />
+          <input type="email" placeholder="Gmail" required spellcheck="false" name="email" maxlength="50"
+            autocomplete="off" />
         </div>
         <div class="input-group">
           <i data-feather="message-square"></i>
           <input type="text" placeholder="Isi Pesan" minlength="30" maxlength="500" required spellcheck="false"
-            pattern="^(?!\s+$).+" title="Masukkan Pesan yang valid (huruf alfabet dan spasi)" name="pesan" />
+            pattern="^(?!\s+$).+" title="Masukkan Pesan yang valid (huruf alfabet dan spasi)" name="pesan"
+            autocomplete="off" />
         </div>
         <div>
 
@@ -204,6 +211,10 @@
   <script>
     feather.replace();
   </script>
+
+
+  <!-- Sweet Alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js"></script>
 
   <!-- JavaScript -->
   <script src="script.js"></script>
