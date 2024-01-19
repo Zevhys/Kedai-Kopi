@@ -370,7 +370,7 @@ body {
 footer {
   background-color: var(--primary);
   text-align: center;
-  padding: 2rem 0 3rem;
+  padding: 3rem 0 1rem;
   margin-top: 3rem;
 }
 
@@ -526,4 +526,10 @@ footer .credit a {
   .hero {
     --bgs: linear-gradient(#000d, #000d), url("img/header-bg.jpg");
   }
+}
+#swal2-html-container {
+  text-align: center;
+}
+.swal2-container {
+  backdrop-filter: blur(6px);
 }
