@@ -51,14 +51,11 @@ form.addEventListener("submit", (e) => {
 
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      console.log("Success!", response);
-      alert("Success!", response);
-      restore_submit_btn();
+      showPopup(false);
+      form.reset();
     })
     .catch((error) => {
-      console.error("Error!", error.message);
-      alert("Error!", error.message);
-      restore_submit_btn();
+      showPopup(true, error);
     });
 });
 
@@ -67,4 +64,18 @@ function restore_submit_btn() {
   submit_btn_load.classList.add("hidden");
   submit_btn.classList.remove("submitting");
   submit_btn_msg.textContent = "Kirim Pesan";
+}
+
+function showPopup(failed, error) {
+  restore_submit_btn();
+  Swal.fire({
+    position: "center",
+    showConfirmButton: true,
+
+    title: failed ? "An error occured" : "Form submitted",
+    html: failed
+      ? `Pesan gagal dikirim, <br> ${error}`
+      : `Pesan sudah terkirim`,
+    icon: failed ? "error" : "success",
+  });
 }
