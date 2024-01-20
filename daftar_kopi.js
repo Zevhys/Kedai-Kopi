@@ -1,9 +1,10 @@
 // Daftar List Kopi
+
 let daftar_kopi = {
   biji_toraja: {
     nama: "Biji Toraja",
     deskripsi:
-      "Biji Toraja. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt repellendus ad aperiam <br>saepeipsam voluptate placeat in ullam, tenetur eligendi, voluptates porro inventore voluptatem.",
+      "Berasal dari dataran tinggi Sulawesi Selatan, menawarkan pengalaman rasa yang unik dan mengagumkan. Ditanam dengan dedikasi tinggi oleh petani lokal, kopi Toraja memikat dengan karakteristiknya yang khas. Diproses secara telaten, setiap cangkir kopi Toraja mencerminkan perpaduan sempurna antara keaslian dan kelembutan. Rasanya yang kaya, dengan sentuhan fruity dan hint bunga, menjadikan kopi Toraja pilihan istimewa bagi para penikmat kopi yang menghargai cita rasa yang berpadu harmonis dalam setiap tegukan.",
     nilai: 5,
     harga: 30000,
     diskon: 0.15,
@@ -14,7 +15,7 @@ let daftar_kopi = {
   biji_luwak: {
     nama: "Biji Luwak",
     deskripsi:
-      "Biji Luwak. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt repellendus ad aperiam <br>saepeipsam voluptate placeat in ullam, tenetur eligendi, voluptates porro inventore voluptatem.",
+      'Juga dikenal sebagai kopi kopi "civet" atau "musang", menghadirkan pengalaman kopi yang eksklusif dan langka. Dipetik dari feses musang liar setelah proses pencernaan alami, biji kopi Luwak menjalani transformasi unik yang menghasilkan cita rasa yang luar biasa. Dengan kehadiran sentuhan earthy dan kurma, kopi Luwak menawarkan kelembutan yang istimewa. Pengalaman menyeduh kopi Luwak menjadi perjalanan rasa yang tak terlupakan, memukau para penikmat kopi dengan nuansa berbeda yang sulit dicapai oleh jenis kopi lainnya.',
     nilai: 4,
     harga: 45000,
     diskon: 0.1,
@@ -25,7 +26,7 @@ let daftar_kopi = {
   biji_flores: {
     nama: "Biji Flores",
     deskripsi:
-      "Biji Flores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt repellendus ad aperiam <br>saepeipsam voluptate placeat in ullam, tenetur eligendi, voluptates porro inventore voluptatem.",
+      "Menyajikan petualangan rasa yang memikat, berasal dari dataran tinggi pulau yang subur di Indonesia. Dikenal dengan ciri khasnya yang unik, kopi Flores menghadirkan paduan cita rasa yang seimbang antara keasaman ringan, kelembutan, dan sentuhan manis bunga. Dipetik dengan teliti dan diproses secara hati-hati, biji kopi Flores menghasilkan minuman kopi yang memanjakan lidah, dengan nuansa buah tropis dan cokelat. Rasakan keindahan alam pulau Flores dalam setiap tegukan kopi ini, yang membawa kenikmatan kopi ke tingkat yang lebih tinggi.",
     nilai: 3,
     harga: 50000,
     diskon: 0.11,
