@@ -100,6 +100,13 @@ const rupiah = Intl.NumberFormat("id-ID", {
   maximumFractionDigits: 0,
 });
 
+// let daftar_kopi = fetch("daftar_kopi.json")
+//   .then((response) => response.json())
+//   .finally((json) => {
+//     return json;
+//   });
+// console.log(daftar_kopi);
+
 // Daftar Produk
 const product_card_template = d.getElementById("product-card-template");
 const product_list = d.getElementById("product-list");
@@ -107,31 +114,36 @@ for (const kopi in daftar_kopi) {
   let product_card = product_card_template.cloneNode(true);
   let product = daftar_kopi[kopi];
 
-  product_card.getElementsByClassName("item-detail-button")[0]
+  product_card
+    .getElementsByClassName("item-detail-button")[0]
     .setAttribute("data-product", kopi);
 
-  product_card.getElementsByClassName("product-image")[0]
+  product_card
+    .getElementsByClassName("product-image")[0]
     .getElementsByTagName("img")[0]
     .setAttribute("src", product.gambar);
 
-  product_card.getElementsByClassName("products-content")[0]
-    .getElementsByTagName("h3")[0]
-    .textContent = product.nama;
+  product_card
+    .getElementsByClassName("products-content")[0]
+    .getElementsByTagName("h3")[0].textContent = product.nama;
 
-  product_card.getElementsByClassName("product-price-base")[0]
-    .textContent = rupiah.format(product.harga);
+  product_card.getElementsByClassName("product-price-base")[0].textContent =
+    rupiah.format(product.harga);
 
-  product_card.getElementsByClassName("product-price-discount")[0]
-    .textContent = rupiah.format(
-      product.harga - product.harga * product.diskon
-    );
+  product_card.getElementsByClassName("product-price-discount")[0].textContent =
+    rupiah.format(product.harga - product.harga * product.diskon);
 
-  product_card.getElementsByClassName("product-price")[0]
+  product_card
+    .getElementsByClassName("product-price")[0]
     .setAttribute("data-diskon", product.diskon > 0.0);
+
+  for (let i = 0; i < 5 - product.nilai; i++) {
+    product_card.getElementsByClassName("star-full")[i].classList.add("hidden");
+  }
 
   product_card.classList.remove("hidden");
   product_card.removeAttribute("id");
-  
+
   product_list.appendChild(product_card);
 
   // console.log(daftar_kopi[kopi]);
@@ -152,6 +164,7 @@ itemDetailButtons.forEach((btn) => {
 // Klik Tombol Close
 d.querySelector(".modal .close-icon").onclick = (e) => {
   itemDetailModal.style.display = "none";
+  product_rating_reset();
   e.preventDefault();
 };
 
@@ -159,6 +172,7 @@ d.querySelector(".modal .close-icon").onclick = (e) => {
 window.onclick = (e) => {
   if (e.target === itemDetailModal) {
     itemDetailModal.style.display = "none";
+    product_rating_reset();
   }
 };
 
@@ -170,6 +184,12 @@ const product_rating = d.getElementById("product-rating");
 const product_discount = d.getElementById("product-price-discount");
 const product_price = d.getElementById("product-price");
 const product_prices = d.getElementById("product-prices");
+function product_rating_reset() {
+  const stars = product_rating.children;
+  for (let q = 0; q < stars.length; q++) {
+    stars[q].classList.remove("hidden");
+  }
+}
 function showDetail(btn) {
   let product = daftar_kopi[btn.getAttribute("data-product")];
   product_name.textContent = product.nama;
@@ -181,4 +201,10 @@ function showDetail(btn) {
     product.harga - product.harga * product.diskon
   );
   product_prices.setAttribute("data-diskon", product.diskon > 0.0);
+
+  for (let i = 0; i < 5 - product.nilai; i++) {
+    product_rating
+      .getElementsByClassName("star-full")
+      [i].classList.add("hidden");
+  }
 }
