@@ -86,8 +86,8 @@ function showPopup(failed, error) {
 
     title: failed ? "An error occured" : "Form submitted",
     html: failed
-      ? `Pesan gagal dikirim, <br> ${error}`
-      : `Pesan sudah terkirim`,
+      ? `Pesan Gagal Dikirim, <br> ${error}`
+      : `Pesan Sudah Terkirim`,
     icon: failed ? "error" : "success",
   });
 }
@@ -100,6 +100,8 @@ itemDetailButtons.forEach((btn) => {
   btn.onclick = (e) => {
     itemDetailModal.style.display = "flex";
     e.preventDefault();
+    showDetail(btn);
+    console.log(daftar_kopi[btn.getAttribute("data-product")]);
   };
 });
 
@@ -115,3 +117,42 @@ window.onclick = (e) => {
     itemDetailModal.style.display = "none";
   }
 };
+
+// Mata Uang
+const rupiah = Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+// Daftar Produk
+const product_card_template = d.getElementById("product-card-template");
+const product_list = d.getElementById("product-list");
+for (const n in daftar_kopi) {
+  let product_card = product_card_template.cloneNode(true);
+
+  console.log(daftar_kopi[n]);
+}
+
+// Details
+const product_name = d.getElementById("product-name");
+const product_desc = d.getElementById("product-desc");
+const product_img = d.getElementById("product-img");
+const product_rating = d.getElementById("product-rating");
+const product_discount = d.getElementById("product-price-discount");
+const product_price = d.getElementById("product-price");
+const product_prices = d.getElementById("product-prices");
+function showDetail(btn) {
+  let product = daftar_kopi[btn.getAttribute("data-product")];
+  product_name.textContent = product.nama;
+  product_desc.innerHTML = product.deskripsi;
+  product_img.setAttribute("src", product.gambar);
+
+  product_price.textContent = rupiah.format(product.harga);
+  product_discount.textContent = rupiah.format(
+    product.harga - product.harga * product.diskon
+  );
+
+  product_prices.setAttribute("data-diskon", product.diskon > 0.0);
+}
