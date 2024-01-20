@@ -92,51 +92,6 @@ function showPopup(failed, error) {
   });
 }
 
-// Mata Uang
-const rupiah = Intl.NumberFormat("id-ID", {
-  style: "currency",
-  currency: "IDR",
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-});
-
-// Daftar Produk
-const product_card_template = d.getElementById("product-card-template");
-const product_list = d.getElementById("product-list");
-for (const kopi in daftar_kopi) {
-  let product_card = product_card_template.cloneNode(true);
-  let product = daftar_kopi[kopi];
-
-  product_card.getElementsByClassName("item-detail-button")[0]
-    .setAttribute("data-product", kopi);
-
-  product_card.getElementsByClassName("product-image")[0]
-    .getElementsByTagName("img")[0]
-    .setAttribute("src", product.gambar);
-
-  product_card.getElementsByClassName("products-content")[0]
-    .getElementsByTagName("h3")[0]
-    .textContent = product.nama;
-
-  product_card.getElementsByClassName("product-price-base")[0]
-    .textContent = rupiah.format(product.harga);
-
-  product_card.getElementsByClassName("product-price-discount")[0]
-    .textContent = rupiah.format(
-      product.harga - product.harga * product.diskon
-    );
-
-  product_card.getElementsByClassName("product-price")[0]
-    .setAttribute("data-diskon", product.diskon > 0.0);
-
-  product_card.classList.remove("hidden");
-  product_card.removeAttribute("id");
-  
-  product_list.appendChild(product_card);
-
-  // console.log(daftar_kopi[kopi]);
-}
-
 //  Modal Box
 const itemDetailModal = d.querySelector("#item-detail-modal");
 const itemDetailButtons = d.querySelectorAll(".item-detail-button");
@@ -146,6 +101,7 @@ itemDetailButtons.forEach((btn) => {
     itemDetailModal.style.display = "flex";
     e.preventDefault();
     showDetail(btn);
+    console.log(daftar_kopi[btn.getAttribute("data-product")]);
   };
 });
 
@@ -161,6 +117,23 @@ window.onclick = (e) => {
     itemDetailModal.style.display = "none";
   }
 };
+
+// Mata Uang
+const rupiah = Intl.NumberFormat("id-ID", {
+  style: "currency",
+  currency: "IDR",
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+// Daftar Produk
+const product_card_template = d.getElementById("product-card-template");
+const product_list = d.getElementById("product-list");
+for (const n in daftar_kopi) {
+  let product_card = product_card_template.cloneNode(true);
+
+  console.log(daftar_kopi[n]);
+}
 
 // Details
 const product_name = d.getElementById("product-name");
@@ -180,5 +153,6 @@ function showDetail(btn) {
   product_discount.textContent = rupiah.format(
     product.harga - product.harga * product.diskon
   );
+
   product_prices.setAttribute("data-diskon", product.diskon > 0.0);
 }
