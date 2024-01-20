@@ -197,31 +197,14 @@
           <i data-feather="star" class="star-full"></i>
           <i data-feather="star"></i>
         </div>
-        <div class="product-price">IDR 30K <span>IDR 55K</span></div>
+        <div class="product-price" data-diskon="false">
+          <span class="product-price-discount">IDR 30K</span>
+          <span class="product-price-base">IDR 55K</span>
+        </div>
       </div>
     </div>
 
-    <div class="row product-list">
-      <div class="product-card">
-        <div class="product-icons">
-          <a href="#"><i data-feather="shopping-bag"></i></a>
-          <a class="item-detail-button" data-product="biji_toraja"><i data-feather="eye"></i></a>
-        </div>
-        <div class="product-image">
-          <img src="img/product/product-1.png" alt="product-1">
-        </div>
-        <div class="products-content">
-          <h3>Coffe Beans 1</h3>
-          <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star"></i>
-          </div>
-          <div class="product-price">IDR 30K <span>IDR 55K</span></div>
-        </div>
-      </div>
+    <div class="row" id="product-list">
     </div>
   </section>
   <!-- Product Section End -->
@@ -314,8 +297,8 @@
             <i data-feather="star" class="star-full"></i>
           </div>
           <div class="product-price" id="product-prices" data-diskon="true">
-            <span id="product-price-discount">IDR 30K</span>
-            <span id="product-price">IDR 55K</span>
+            <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
+            <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
           <a href="#"><i data-feather="shopping-bag"></i> <span>Masukkan Keranjang</span></a>
         </div>
