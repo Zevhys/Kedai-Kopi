@@ -400,13 +400,13 @@ body {
   font-weight: bold;
 }
 
-.product-price[data-diskon="true"] > #product-price-discount ~ #product-price {
+.product-price[data-diskon="true"] > .product-price-discount ~ .product-price-base {
   text-decoration: line-through;
   font-weight: lighter;
   font-size: 1em;
 }
 
-.product-price[data-diskon="false"] > #product-price-discount {
+.product-price[data-diskon="false"] > .product-price-discount {
   display: none;
 }
 
