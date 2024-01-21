@@ -48,7 +48,12 @@
 
     <div class="navbar-extra">
       <a id="search-button"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-bag-button"><i data-feather="shopping-bag"></i></a>
+      <a href="#" id="shopping-bag-button">
+        <div id="shopping-bag-count">
+          0
+        </div>
+        <i data-feather="shopping-bag" class="shopping-bag-icon"></i>
+      </a>
       <a id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
 
@@ -64,14 +69,19 @@
       <img src="img/product/product-1.png" alt="product-1">
       <div class="item-detail">
         <h3>Product 1</h3>
-        <div class="item-price">IDR 30K</div>
+        <div class="prices-quantity">
+          <input type="number" pattern="^[0-9]" min="1" max="99" maxlength="2" value="1" class="item-quantity">
+          <div class="item-price">IDR 30K</div>
+        </div>
         <span class="remove-item">
           <i data-feather="trash-2"></i>
         </span>
       </div>
     </div>
     <div class="shopping-bag">
+      <div class="shopping-bag-inner">
 
+      </div>
     </div>
     <!-- Shopping Bag End -->
 
@@ -127,9 +137,9 @@
       dengan penuh dedikasi dan keahlian.
     </p>
     <div class="menu-card hidden" id="menu-card-template">
-      <img src="img/Menu/1.jpg" alt="Gula Aren" class="menu-card-img" />
-      <h3 class="menu-card-title">Gula Aren</h3>
-      <p class="menu-card-price">Rp 15.000</p>
+      <img src="" alt="Gula Aren" class="menu-card-img" width="361" />
+      <h3 class="menu-card-title">Loading item...</h3>
+      <p class="menu-card-price">Loading item...</p>
     </div>
     <div class="row" id="menu-list">
     </div>
