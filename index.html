@@ -26,6 +26,11 @@
   <!-- Logo Website -->
   <link rel="icon" href="img/logo-coffe.svg">
 
+  <!-- AlpineJs -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- App -->
+  <script src="app.js"></script>
 </head>
 
 <body>
@@ -54,36 +59,21 @@
     </div>
     <!-- Search From End -->
 
-    <!-- Shopping Cart Start -->
-    <div class="shopping-bag">
-      <div class="cart-item">
-        <img src="img/product/product-1.png" alt="product-1">
-        <div class="item-detail">
-          <h3>Product 1</h3>
-          <div class="item-price">IDR 30K</div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-      </div>
-
-      <div class="cart-item">
-        <img src="img/product/product-2.png" alt="product-2">
-        <div class="item-detail">
-          <h3>Product 2</h3>
-          <div class="item-price">IDR 30K</div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
-      </div>
-
-      <div class="cart-item">
-        <img src="img/product/product-3.png" alt="product-3">
-        <div class="item-detail">
-          <h3>Product 3</h3>
-          <div class="item-price">IDR 30K</div>
-          <i data-feather="trash-2" class="remove-item"></i>
-        </div>
+    <!-- Shopping Bag Start -->
+    <div class="cart-item hidden" id="cart-item-template">
+      <img src="img/product/product-1.png" alt="product-1">
+      <div class="item-detail">
+        <h3>Product 1</h3>
+        <div class="item-price">IDR 30K</div>
+        <span class="remove-item">
+          <i data-feather="trash-2"></i>
+        </span>
       </div>
     </div>
-    <!-- Shopping Cart End -->
+    <div class="shopping-bag">
+
+    </div>
+    <!-- Shopping Bag End -->
 
   </nav>
   <!-- Navbar End -->
@@ -136,38 +126,12 @@
       Jelajahi keanekaragaman cita rasa kopi di menu kami, yang disajikan
       dengan penuh dedikasi dan keahlian.
     </p>
-
-    <div class="row">
-      <div class="menu-card">
-        <img src="img/Menu/1.jpg" alt="Gula Aren" class="menu-card-img" />
-        <h3 class="menu-card-title">- Gula Aren -</h3>
-        <p class="menu-card-price">IDR 15K</p>
-      </div>
-      <div class="menu-card">
-        <img src="img/Menu/2.jpg" alt="Espresso" class="menu-card-img" />
-        <h3 class="menu-card-title">- Espresso -</h3>
-        <p class="menu-card-price">IDR 17K</p>
-      </div>
-      <div class="menu-card">
-        <img src="img/Menu/3.jpg" alt="Latte" class="menu-card-img" />
-        <h3 class="menu-card-title">- Latte -</h3>
-        <p class="menu-card-price">IDR 20KK</p>
-      </div>
-      <div class="menu-card">
-        <img src="img/Menu/4.jpg" alt="Macchiato" class="menu-card-img" />
-        <h3 class="menu-card-title">- Macchiato -</h3>
-        <p class="menu-card-price">IDR 16K</p>
-      </div>
-      <div class="menu-card">
-        <img src="img/Menu/5.jpg" alt="Mocha" class="menu-card-img" />
-        <h3 class="menu-card-title">- Mocha -</h3>
-        <p class="menu-card-price">IDR 18K</p>
-      </div>
-      <div class="menu-card">
-        <img src="img/Menu/6.jpg" alt="Frappe" class="menu-card-img" />
-        <h3 class="menu-card-title">- Frappe -</h3>
-        <p class="menu-card-price">IDR 25K</p>
-      </div>
+    <div class="menu-card hidden" id="menu-card-template">
+      <img src="img/Menu/1.jpg" alt="Gula Aren" class="menu-card-img" />
+      <h3 class="menu-card-title">Gula Aren</h3>
+      <p class="menu-card-price">Rp 15.000</p>
+    </div>
+    <div class="row" id="menu-list">
     </div>
   </section>
   <!-- Menu Section End -->
@@ -176,14 +140,15 @@
   <section class="products" id="products">
     <h2><span>Produk Unggulan</span> Kami</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis autem ipsa iusto laudantium quisquam
-      eligendi.
+      Temukan keajaiban rasa dalam setiap tegukan dengan koleksi biji kopi unggulan kami. Pengalaman kopi berkualitas
+      tinggi
+      yang memikat, hanya dari yang terbaik untuk Anda.
     </p>
 
-    <div class="product-card hidden" id="product-card-template">
+    <div class="product-card hidden" id="product-card-template" x-data="products">
       <div class="product-card-inner">
         <div class=" product-icons">
-          <a href="#"><i data-feather="shopping-bag"></i></a>
+          <a class="shopping-bag-btn"><i data-feather="shopping-bag"></i></a>
           <a class="item-detail-button" data-product="biji_toraja"><i data-feather="eye"></i></a>
         </div>
         <div class="product-image">

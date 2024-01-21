@@ -166,7 +166,8 @@ body {
 
 .shopping-bag .remove-item {
   position: absolute;
-  right: 1rem;
+  right: 0;
+  bottom: 0;
   cursor: pointer;
 }
 
@@ -294,7 +295,7 @@ body {
 .about .row .content p {
   margin-bottom: 0.8rem;
   font-size: 1.4rem;
-  font-weight: 250;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -336,6 +337,18 @@ body {
   margin: 1rem auto 0.5rem;
 }
 
+.menu-card-title::after {
+  content: " -";
+}
+
+.menu-card-title::before {
+  content: "- ";
+}
+
+.menu-card-price {
+  font-weight: bold !important;
+}
+
 /* Products Section */
 .products .row {
   display: grid;
@@ -350,27 +363,30 @@ body {
   padding: 1rem;
   border-radius: 7px;
   background: #0f0f0f;
+  transition: all 0.3s ease-in-out;
 }
 
 .products .product-card-inner {
   border: 1px solid #666;
   padding: 1rem;
   border-radius: 7px;
+  transition: all 0.3s ease-in-out;
 }
 
-.product-card:hover {
+.products .product-card:hover {
   padding: 0;
-  transition: 0.3s ease-in-out;
+}
+
+.product-card .product-card-inner > .product-image {
+  transition: all 0.3s ease-in-out;
 }
 
 .product-card:hover .product-card-inner > .product-image {
   transform: scale(1.05);
-  transition: 0.3s ease-in-out;
 }
 
 .product-card:hover .product-card-inner {
   padding: 2rem;
-  transition: 0.3s ease-in-out;
 }
 
 /* .products .product-card:hover {
@@ -588,7 +604,7 @@ footer .credit a {
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.7);
   align-items: center;
   backdrop-filter: blur(6px);

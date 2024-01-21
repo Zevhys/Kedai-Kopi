@@ -19,18 +19,21 @@ d.querySelector("#shopping-bag-button").onclick = (e) => {
 const hm = d.querySelector("#hamburger-menu");
 const sb = d.querySelector("#search-button");
 const sbg = d.querySelector("#shopping-bag-button");
+let rm = [];
 
 d.addEventListener("click", function (e) {
-  if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
-    navbarNav.classList.remove("active");
-  }
+  if (true) {
+    if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
+      navbarNav.classList.remove("active");
+    }
 
-  if (!sb.contains(e.target) && !searchForm.contains(e.target)) {
-    searchForm.classList.remove("active");
-  }
+    if (!sb.contains(e.target) && !searchForm.contains(e.target)) {
+      searchForm.classList.remove("active");
+    }
 
-  if (!sbg.contains(e.target) && !shoppingBag.contains(e.target)) {
-    shoppingBag.classList.remove("active");
+    if (!sbg.contains(e.target) && !shoppingBag.contains(e.target)) {
+      shoppingBag.classList.remove("active");
+    }
   }
 });
 
@@ -100,12 +103,33 @@ const rupiah = Intl.NumberFormat("id-ID", {
   maximumFractionDigits: 0,
 });
 
-// let daftar_kopi = fetch("daftar_kopi.json")
-//   .then((response) => response.json())
-//   .finally((json) => {
-//     return json;
-//   });
-// console.log(daftar_kopi);
+// Template
+function appendTemplate(elem, target) {
+  elem.classList.remove("hidden");
+  elem.removeAttribute("id");
+  target.appendChild(elem);
+}
+
+// Daftar Menu
+const menu_card_template = d.getElementById("menu-card-template");
+const menu_list = d.getElementById("menu-list");
+for (const menu2 in menu_kopi) {
+  let menu_card = menu_card_template.cloneNode(true);
+  let menu = menu_kopi[menu2];
+
+  menu_card.getElementsByClassName("menu-card-title")[0].textContent =
+    menu.nama;
+  menu_card.getElementsByClassName("menu-card-price")[0].textContent =
+    rupiah.format(menu.harga);
+  menu_card
+    .getElementsByClassName("menu-card-img")[0]
+    .setAttribute("src", menu.gambar);
+  menu_card
+    .getElementsByClassName("menu-card-img")[0]
+    .setAttribute("alt", menu.nama);
+
+  appendTemplate(menu_card, menu_list);
+}
 
 // Daftar Produk
 const product_card_template = d.getElementById("product-card-template");
@@ -116,6 +140,10 @@ for (const kopi in daftar_kopi) {
 
   product_card
     .getElementsByClassName("item-detail-button")[0]
+    .setAttribute("data-product", kopi);
+
+  product_card
+    .getElementsByClassName("shopping-bag-btn")[0]
     .setAttribute("data-product", kopi);
 
   product_card
@@ -141,12 +169,7 @@ for (const kopi in daftar_kopi) {
     product_card.getElementsByClassName("star-full")[i].classList.add("hidden");
   }
 
-  product_card.classList.remove("hidden");
-  product_card.removeAttribute("id");
-
-  product_list.appendChild(product_card);
-
-  // console.log(daftar_kopi[kopi]);
+  appendTemplate(product_card, product_list);
 }
 
 //  Modal Box
@@ -207,4 +230,36 @@ function showDetail(btn) {
       .getElementsByClassName("star-full")
       [i].classList.add("hidden");
   }
+}
+
+// Shopping Cart
+const shopping_bag = d.getElementsByClassName("shopping-bag")[0];
+const cart_item_template = d.getElementById("cart-item-template");
+d.querySelectorAll(".shopping-bag-btn").forEach((n) => {
+  console.log(n.getAttribute("data-product"));
+
+  n.addEventListener("click", () => {
+    addCartItem(daftar_kopi[n.getAttribute("data-product")]);
+  });
+});
+
+function addCartItem(product) {
+  let cart_item = cart_item_template.cloneNode(true);
+
+  cart_item.getElementsByTagName("img")[0].setAttribute("src", product.gambar);
+  cart_item.getElementsByTagName("img")[0].setAttribute("alt", product.nama);
+  cart_item.getElementsByTagName("h3")[0].textContent = product.nama;
+  cart_item.getElementsByClassName("item-price")[0].textContent = rupiah.format(
+    product.harga - product.harga * product.diskon
+  );
+
+  cart_item
+    .getElementsByClassName("remove-item")[0]
+    .addEventListener("click", () => {
+      cart_item.remove();
+    });
+
+  rm.push();
+
+  appendTemplate(cart_item, shopping_bag);
 }

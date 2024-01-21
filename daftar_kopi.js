@@ -1,6 +1,44 @@
-// Daftar List Kopi
+// Menu Kopi
+const menu_kopi = {
+  gula_aren: {
+    nama: "Gula Aren",
+    harga: 15000,
+    gambar: "img/Menu/1.jpg",
+  },
 
-let daftar_kopi = {
+  espresso: {
+    nama: "Espresso",
+    harga: 17000,
+    gambar: "img/Menu/2.jpg",
+  },
+
+  latte: {
+    nama: "Latte",
+    harga: 20000,
+    gambar: "img/Menu/3.jpg",
+  },
+
+  macchiato: {
+    nama: "Macchiato",
+    harga: 16000,
+    gambar: "img/Menu/4.jpg",
+  },
+
+  mocha: {
+    nama: "Mocha",
+    harga: 18000,
+    gambar: "img/Menu/5.jpg",
+  },
+
+  frappe: {
+    nama: "Frappe",
+    harga: 25000,
+    gambar: "img/Menu/6.jpg",
+  },
+};
+
+// Daftar List Kopi
+const daftar_kopi = {
   biji_toraja: {
     nama: "Biji Toraja",
     deskripsi:
