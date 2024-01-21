@@ -86,7 +86,7 @@ body {
   margin: 0 0.5rem;
 }
 
-.navbar .navbar-extra a:hover {
+.navbar .navbar-extra a:hover .shopping-bag-icon {
   color: var(--primary);
 }
 
@@ -171,6 +171,19 @@ body {
   cursor: pointer;
 }
 
+.prices-quantity {
+  display: flex;
+}
+
+.shopping-bag .item-quantity {
+  max-width: 2.5em;
+  margin-right: 1em;
+}
+
+.item-quantity::after {
+  content: "x ";
+}
+
 .shopping-bag .remove-item:hover {
   color: var(--primary);
 }
@@ -178,6 +191,23 @@ body {
 .shopping-bag img {
   height: 6rem;
   border-radius: 50%;
+}
+
+#shopping-bag-count {
+  position: absolute;
+  bottom: 100%;
+  right: -0.75em;
+  background: var(--primary);
+  border-radius: 50%;
+  padding: 0.1em;
+  font-weight: bold;
+  min-width: 2em;
+  min-height: 2em;
+  text-align: center;
+}
+
+#shopping-bag-button {
+  position: relative;
 }
 
 /* Hero Section */
