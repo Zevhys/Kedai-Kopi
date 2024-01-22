@@ -8,4 +8,4 @@
 Welcome to Breeze Brew, where the aroma of freshly brewed coffee meets the tranquility of a serene ambiance. This project is a stylish and user-friendly website for a coffee shop, designed to provide an immersive experience for coffee enthusiasts.
 </p>
 
-<p>I am currently working on a project in collaboration with my friend, @nndda.</p>
+<p>I am currently working on a project in collaboration with my friend, <a href="https://github.com/nndda">@nndda.</a></p>
