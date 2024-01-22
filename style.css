@@ -171,9 +171,19 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.shopping-bag .item-price-total,
 .shopping-bag .item-price {
   font-size: 1.2rem;
-  margin-left: 1em;
+}
+
+.qty-add,
+.shopping-bag .item-price {
+  margin-right: 0.5em;
+}
+
+.qty-sub,
+.shopping-bag .item-price-total {
+  margin-left: 0.5em;
 }
 
 .shopping-bag-footer {
@@ -185,6 +195,7 @@ body {
   right: 0;
   bottom: 0;
   cursor: pointer;
+  background: transparent;
 }
 
 .prices-quantity {

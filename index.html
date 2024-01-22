@@ -59,28 +59,34 @@
     <!-- Search From End -->
 
     <!-- Shopping Bag Start -->
-    <div class="cart-item hidden" id="cart-item-template">
-      <img src="img/product/product-1.png" alt="product-1">
-      <div class="item-detail">
-        <h3>Product 1</h3>
-        <div class="prices-quantity">
-          <button class="btn-qty qty-sub">-</button>
-          <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
-          <button class="btn-qty qty-add">+</button>
-          <div class="item-price">IDR 30K</div>
-        </div>
-        <button class="remove-item">
-          <i data-feather="trash-2"></i>
-        </button>
-      </div>
-    </div>
     <div class="shopping-bag">
+
+      <div class="cart-item hidden" id="cart-item-template">
+        <img src="img/product/product-1.png" alt="product-1">
+        <div class="item-detail">
+          <h3>Product 1</h3>
+          <div class="prices-quantity">
+            <div class="item-price">IDR 30K</div>
+            X
+            <button class="btn-qty qty-sub">-</button>
+            <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
+            <button class="btn-qty qty-add">+</button>
+            =
+            <div class="item-price-total">Rp 30.000</div>
+            <button class="remove-item">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
       <div class="shopping-bag-empty">
         <p>Keranjang Kosong</p>
       </div>
-      <div class="shopping-bag-inner">
 
+      <div class="shopping-bag-inner">
       </div>
+
       <div class="shopping-bag-footer">
         Total Harga:
         <span id="current-items-total">Rp 23.456</span>

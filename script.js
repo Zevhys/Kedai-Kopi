@@ -22,19 +22,19 @@ const sb = d.querySelector("#search-button");
 const sbg = d.querySelector("#shopping-bag-button");
 
 d.addEventListener("click", function (e) {
-  // if (true) {
-  if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
-    navbarNav.classList.remove("active");
-  }
+  if (!e.target.matches(".remove-item")) {
+    if (!hm.contains(e.target) && !navbarNav.contains(e.target)) {
+      navbarNav.classList.remove("active");
+    }
 
-  if (!sb.contains(e.target) && !searchForm.contains(e.target)) {
-    searchForm.classList.remove("active");
-  }
+    if (!sb.contains(e.target) && !searchForm.contains(e.target)) {
+      searchForm.classList.remove("active");
+    }
 
-  if (!sbg.contains(e.target) && !shoppingBag.contains(e.target)) {
-    shoppingBag.classList.remove("active");
+    if (!sbg.contains(e.target) && !shoppingBag.contains(e.target)) {
+      shoppingBag.classList.remove("active");
+    }
   }
-  // }
 });
 
 // Toggle class active untuk search form
@@ -255,7 +255,7 @@ function countItems() {
   return o;
 }
 
-function updateItemsCount() {
+function updateItemsCount(save = false) {
   shopping_bag_count.textContent = countItems();
   shopping_bag_count.classList.toggle(
     "hidden",
@@ -273,9 +273,12 @@ function updateItemsCount() {
     total += current_items[item].qty * current_items[item].price;
   }
   shopping_bag_total.textContent = rupiah.format(total);
-  localStorage.setItem("current_items", JSON.stringify(current_items));
+
+  if (save) {
+    localStorage.setItem("current_items", JSON.stringify(current_items));
+  }
 }
-updateItemsCount();
+updateItemsCount(false);
 
 d.querySelectorAll(".shopping-bag-btn").forEach((n) => {
   console.log(n.getAttribute("data-product"));
@@ -285,13 +288,20 @@ d.querySelectorAll(".shopping-bag-btn").forEach((n) => {
   });
 });
 
-function addCartItem(product_id, set_qty = 0) {
+function addCartItem(product_id, set_qty = 0, from_storage = false) {
   const product = daftar_kopi[product_id];
 
   if (current_items[product_id].qty == 0) {
     let cart_item = cart_item_template.cloneNode(true);
 
     const qty_input = cart_item.getElementsByClassName("item-quantity")[0];
+    const itm_total = cart_item.getElementsByClassName("item-price-total")[0];
+
+    // const total_item = (total_elem) => {
+    //   itm_total.textContent = rupiah.format(
+    //     current_items[product_id].qty * current_items[product_id].price
+    //   );
+    // };
 
     cart_item
       .getElementsByTagName("img")[0]
@@ -303,23 +313,31 @@ function addCartItem(product_id, set_qty = 0) {
 
     cart_item.setAttribute("data-product", product_id);
 
-    // cart_item
-    //   .getElementsByClassName("remove-item")[0]
-    //   .setAttribute("data-product", product);
-
     cart_item
       .getElementsByClassName("remove-item")[0]
-      .addEventListener("click", () => {
+      .addEventListener("click", (e) => {
         current_items[product_id].qty = 0;
         updateItemsCount();
         cart_item.remove();
       });
+
+    // const qtyChange = (c) => {
+    //   qty_input.value = clamp(parseInt(qty_input.value, 10) + c, 1, 99);
+    //   current_items[product_id].qty = parseInt(qty_input.value, 10);
+    //   itm_total.textContent = rupiah.format(
+    //     current_items[product_id].qty * current_items[product_id].price
+    //   );
+    //   updateItemsCount();
+    // };
 
     cart_item
       .getElementsByClassName("qty-add")[0]
       .addEventListener("click", () => {
         qty_input.value = clamp(parseInt(qty_input.value, 10) + 1, 1, 99);
         current_items[product_id].qty = parseInt(qty_input.value, 10);
+        itm_total.textContent = rupiah.format(
+          current_items[product_id].qty * current_items[product_id].price
+        );
         updateItemsCount();
       });
 
@@ -328,11 +346,16 @@ function addCartItem(product_id, set_qty = 0) {
       .addEventListener("click", () => {
         qty_input.value = clamp(parseInt(qty_input.value, 10) - 1, 1, 99);
         current_items[product_id].qty = parseInt(qty_input.value, 10);
+        itm_total.textContent = rupiah.format(
+          current_items[product_id].qty * current_items[product_id].price
+        );
         updateItemsCount();
       });
 
     current_items[product_id].qty = 1;
-
+    itm_total.textContent = rupiah.format(
+      current_items[product_id].qty * current_items[product_id].price
+    );
     appendTemplate(cart_item, shopping_bag);
   } else {
     current_items[product_id].qty += 1;
@@ -352,17 +375,23 @@ function addCartItem(product_id, set_qty = 0) {
       qty_inputty.value = set_qty;
       current_items[product_id].qty = set_qty;
     }
-
+    itm_total.textContent = rupiah.format(
+      current_items[product_id].qty * current_items[product_id].price
+    );
     updateItemsCount();
   });
 
   qty_input.value = current_items[product_id].qty;
-  updateItemsCount();
+  updateItemsCount(!from_storage);
 }
 
-if (localStorage.getItem("current_items") != null) {
-  const data = JSON.parse(localStorage.getItem("current_items"));
-  for (const itm in data) {
-    addCartItem(itm, data[itm].qty);
-  }
-}
+// if (localStorage.getItem("current_items") != null) {
+//   const data = JSON.parse(localStorage.getItem("current_items"));
+//   for (const itm in data) {
+//     addCartItem(itm, data[itm].qty, true);
+//   }
+// }
+
+// FIX: LocalStorage
+// TODO: Add/sub button hold down InputEvent
+// TODO: Migrasi ke FontAwesome
