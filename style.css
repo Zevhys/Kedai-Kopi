@@ -86,8 +86,9 @@ body {
   margin: 0 0.5rem;
 }
 
-.navbar .navbar-extra a:hover .shopping-bag-icon {
+.navbar .navbar-extra a:hover .icon {
   color: var(--primary);
+  cursor: pointer;
 }
 
 #hamburger-menu {
@@ -141,6 +142,16 @@ body {
   transition: 0.3s linear;
 }
 
+.shopping-bag-empty {
+  display: flex;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .shopping-bag.active {
   right: 0;
 }
@@ -162,6 +173,11 @@ body {
 
 .shopping-bag .item-price {
   font-size: 1.2rem;
+  margin-left: 1em;
+}
+
+.shopping-bag-footer {
+  font-weight: bold;
 }
 
 .shopping-bag .remove-item {
@@ -172,16 +188,31 @@ body {
 }
 
 .prices-quantity {
+  font-weight: bold;
   display: flex;
 }
 
 .shopping-bag .item-quantity {
-  max-width: 2.5em;
-  margin-right: 1em;
+  font-weight: bold;
+  max-width: 2em;
+  text-align: center;
+
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
-.item-quantity::after {
-  content: "x ";
+.btn-qty {
+  width: 1.5em;
+  height: 1.5em;
+  font-weight: bold;
+  background: var(--primary);
+  color: white;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-qty:hover {
+  transform: scale(1.1);
 }
 
 .shopping-bag .remove-item:hover {
@@ -204,6 +235,25 @@ body {
   min-width: 2em;
   min-height: 2em;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anim-pop {
+  animation: cubic-bezier(0.87, 0, 0.13, 1) 0.5s 1 pop;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 #shopping-bag-button {
@@ -578,6 +628,7 @@ footer {
 
 footer .socials {
   padding: 1rem 0;
+  transition: color 0.3s;
 }
 
 footer .socials a {
@@ -616,7 +667,6 @@ footer .credit a {
 
 footer .socials a:hover {
   color: var(--bg);
-  transition: color 0.3s;
 }
 
 /* Modal Box */
