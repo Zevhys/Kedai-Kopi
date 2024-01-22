@@ -1,4 +1,5 @@
 let d = document;
+const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
 // Togle class active
 const navbarNav = d.querySelector(".navbar-nav");
@@ -234,11 +235,14 @@ function showDetail(btn) {
 // Shopping Cart
 const shopping_bag_count = d.getElementById("shopping-bag-count");
 const shopping_bag = d.getElementsByClassName("shopping-bag-inner")[0];
+const shopping_bag_total = d.getElementById("current-items-total");
+const shopping_bag_empty = d.getElementsByClassName("shopping-bag-empty")[0];
 const cart_item_template = d.getElementById("cart-item-template");
 let current_items = {};
 
 for (const l in daftar_kopi) {
   current_items[l] = {
+    price: daftar_kopi[l].harga - daftar_kopi[l].harga * daftar_kopi[l].diskon,
     qty: 0,
   };
 }
@@ -251,6 +255,28 @@ function countItems() {
   return o;
 }
 
+function updateItemsCount() {
+  shopping_bag_count.textContent = countItems();
+  shopping_bag_count.classList.toggle(
+    "hidden",
+    shopping_bag_count.textContent == "0"
+  );
+  shopping_bag_empty.classList.toggle(
+    "hidden",
+    shopping_bag_count.textContent != "0"
+  );
+  shopping_bag_count.classList.remove("anim-pop");
+  void shopping_bag_count.offsetWidth;
+  shopping_bag_count.classList.add("anim-pop");
+  let total = 0;
+  for (const item in current_items) {
+    total += current_items[item].qty * current_items[item].price;
+  }
+  shopping_bag_total.textContent = rupiah.format(total);
+  localStorage.setItem("current_items", JSON.stringify(current_items));
+}
+updateItemsCount();
+
 d.querySelectorAll(".shopping-bag-btn").forEach((n) => {
   console.log(n.getAttribute("data-product"));
 
@@ -259,15 +285,13 @@ d.querySelectorAll(".shopping-bag-btn").forEach((n) => {
   });
 });
 
-function addCartItem(product_id) {
+function addCartItem(product_id, set_qty = 0) {
   const product = daftar_kopi[product_id];
-
-  // console.log(product);
-  // console.log(product_id);
-  // console.log(current_items);
 
   if (current_items[product_id].qty == 0) {
     let cart_item = cart_item_template.cloneNode(true);
+
+    const qty_input = cart_item.getElementsByClassName("item-quantity")[0];
 
     cart_item
       .getElementsByTagName("img")[0]
@@ -287,8 +311,24 @@ function addCartItem(product_id) {
       .getElementsByClassName("remove-item")[0]
       .addEventListener("click", () => {
         current_items[product_id].qty = 0;
-        shopping_bag_count.textContent = countItems();
+        updateItemsCount();
         cart_item.remove();
+      });
+
+    cart_item
+      .getElementsByClassName("qty-add")[0]
+      .addEventListener("click", () => {
+        qty_input.value = clamp(parseInt(qty_input.value, 10) + 1, 1, 99);
+        current_items[product_id].qty = parseInt(qty_input.value, 10);
+        updateItemsCount();
+      });
+
+    cart_item
+      .getElementsByClassName("qty-sub")[0]
+      .addEventListener("click", () => {
+        qty_input.value = clamp(parseInt(qty_input.value, 10) - 1, 1, 99);
+        current_items[product_id].qty = parseInt(qty_input.value, 10);
+        updateItemsCount();
       });
 
     current_items[product_id].qty = 1;
@@ -305,18 +345,24 @@ function addCartItem(product_id) {
   qty_input.addEventListener("input", () => {
     if (qty_input.value.length > 2) {
       qty_input.value = qty_input.value.slice(0, 2);
-    } else if (qty_input.value.length <= 0) {
-      qty_input.value = 1;
     }
-    const qty = parseInt(qty_input.value, 10);
-    if (qty > qty_input.max) {
-      qty = qty_input.max;
+    if (set_qty === 0) {
+      current_items[product_id].qty = clamp(qty_input.value, 1, 99);
+    } else {
+      qty_inputty.value = set_qty;
+      current_items[product_id].qty = set_qty;
     }
-    current_items[product_id].qty = qty;
-    shopping_bag_count.textContent = countItems();
+
+    updateItemsCount();
   });
 
   qty_input.value = current_items[product_id].qty;
+  updateItemsCount();
+}
 
-  shopping_bag_count.textContent = countItems();
+if (localStorage.getItem("current_items") != null) {
+  const data = JSON.parse(localStorage.getItem("current_items"));
+  for (const itm in data) {
+    addCartItem(itm, data[itm].qty);
+  }
 }
