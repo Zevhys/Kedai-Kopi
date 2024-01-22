@@ -25,12 +25,6 @@
 
   <!-- Logo Website -->
   <link rel="icon" href="img/logo-coffe.svg">
-
-  <!-- AlpineJs -->
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-  <!-- App -->
-  <script src="app.js"></script>
 </head>
 
 <body>
@@ -48,7 +42,7 @@
 
     <div class="navbar-extra">
       <a id="search-button"><i data-feather="search"></i></a>
-      <a href="#" id="shopping-bag-button">
+      <a id="shopping-bag-button">
         <div id="shopping-bag-count">
           0
         </div>
@@ -242,7 +236,7 @@
     <div class="links">
       <a href="#home">Home</a>
       <a href="#about">Tentang Kami</a>
-      <a href="#Menu">Menu</a>
+      <a href="#menu">Menu</a>
       <a href="#contact">Kontak</a>
     </div>
 
@@ -256,7 +250,7 @@
   <!-- Modal Box Item Detail Start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <a href="" class="close-icon"><i data-feather="x"></i></a>
+      <a class="close-icon"><i data-feather="x"></i></a>
       <div class="modal-content">
         <img src="img/product/product-1.png" alt="product-1" id="product-img">
         <div class="product-content">
@@ -277,7 +271,10 @@
             <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
             <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
-          <a href="#"><i data-feather="shopping-bag"></i> <span>Masukkan Keranjang</span></a>
+          <a>
+            <i data-feather="shopping-bag"></i>
+            <span>Masukkan Keranjang</span>
+          </a>
         </div>
       </div>
     </div>
