@@ -1,4 +1,4 @@
-<h1>Breeze Brew - Coffee Shop Website</h1>
+<h1><i>Breeze Brew</i> - Coffee Shop Website</h1>
 
 ![](https://img.shields.io/badge/Google%20Fonts-4285F4?style=flat-square&logo=googlefonts&logoColor=ffffff) 
 ![](https://img.shields.io/badge/Google%20Sheets-34A853?style=flat-square&logo=googlesheets&logoColor=ffffff)
