@@ -419,20 +419,6 @@ body {
   padding: 2rem;
 }
 
-/* .products .product-card:hover {
-  padding: 2rem;
-} */
-
-/* .products .product-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 90%;
-  border: 1px solid #666;
-} */
-
 .products .product-icons {
   display: flex;
   justify-content: center;
@@ -598,11 +584,15 @@ footer .socials a {
   color: white;
   margin: 1rem;
   font-size: 1.5rem;
+  transition: color 0.3s;
 }
 
-footer .socials a:hover,
 footer .links a:hover {
   color: var(--bg);
+  transform: scale(1.1);
+  transition: color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 footer .links {
@@ -622,6 +612,11 @@ footer .credit {
 footer .credit a {
   color: var(--bg);
   font-weight: 700;
+}
+
+footer .socials a:hover {
+  color: var(--bg);
+  transition: color 0.3s;
 }
 
 /* Modal Box */
@@ -823,7 +818,7 @@ footer .credit a {
   }
 
   .hero {
-    --bgs: linear-gradient(#000d, #000d), url("img/header-bg.jpg");
+    --bgs: linear-gradient(#000c, #000c), url("img/header-bg.jpg");
   }
 }
 #swal2-html-container {
