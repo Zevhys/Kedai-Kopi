@@ -41,12 +41,12 @@
     </div>
 
     <div class="navbar-extra">
-      <a id="search-button"><i data-feather="search"></i></a>
+      <a id="search-button"><i data-feather="search" class="icon"></i></a>
       <a id="shopping-bag-button">
-        <div id="shopping-bag-count">
+        <div id="shopping-bag-count" class="hidden">
           0
         </div>
-        <i data-feather="shopping-bag" class="shopping-bag-icon"></i>
+        <i data-feather="shopping-bag" class="icon shopping-bag-icon"></i>
       </a>
       <a id="hamburger-menu"><i data-feather="menu"></i></a>
     </div>
@@ -64,17 +64,26 @@
       <div class="item-detail">
         <h3>Product 1</h3>
         <div class="prices-quantity">
-          <input type="number" pattern="^[0-9]" min="1" max="99" maxlength="2" value="1" class="item-quantity">
+          <button class="btn-qty qty-sub">-</button>
+          <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
+          <button class="btn-qty qty-add">+</button>
           <div class="item-price">IDR 30K</div>
         </div>
-        <span class="remove-item">
+        <button class="remove-item">
           <i data-feather="trash-2"></i>
-        </span>
+        </button>
       </div>
     </div>
     <div class="shopping-bag">
+      <div class="shopping-bag-empty">
+        <p>Keranjang Kosong</p>
+      </div>
       <div class="shopping-bag-inner">
 
+      </div>
+      <div class="shopping-bag-footer">
+        Total Harga:
+        <span id="current-items-total">Rp 23.456</span>
       </div>
     </div>
     <!-- Shopping Bag End -->
