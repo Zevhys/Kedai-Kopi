@@ -18,7 +18,9 @@
     rel="stylesheet">
 
   <!-- Icons -->
-  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
 
   <!-- Style -->
   <link rel="stylesheet" href="style.css">
@@ -41,20 +43,24 @@
     </div>
 
     <div class="navbar-extra">
-      <a id="search-button"><i data-feather="search" class="icon"></i></a>
+      <a id="search-button"><i class="fa-solid fa-magnifying-glass icon"></i></a>
       <a id="shopping-bag-button">
         <div id="shopping-bag-count" class="hidden">
           0
         </div>
-        <i data-feather="shopping-bag" class="icon shopping-bag-icon"></i>
+        <i class="fa-solid fa-cart-shopping icon shopping-bag-icon"></i>
       </a>
-      <a id="hamburger-menu"><i data-feather="menu"></i></a>
+      <a id="hamburger-menu">
+        <i class="fa-solid fa-bars icon"></i>
+      </a>
     </div>
 
     <!-- Search From Start -->
     <div class="search-form">
       <input type="search" id="search-box" placeholder="Search Here...">
-      <label for="search-box"><i data-feather="search"></i></label>
+      <label for="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </label>
     </div>
     <!-- Search From End -->
 
@@ -68,13 +74,16 @@
           <div class="prices-quantity">
             <div class="item-price">IDR 30K</div>
             X
-            <button class="btn-qty qty-sub">-</button>
+            <button class="btn-qty qty-sub">
+              <i class="fa-solid fa-minus"></i>
+            </button>
             <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
-            <button class="btn-qty qty-add">+</button>
+            <button class="btn-qty qty-add">
+              <i class="fa-solid fa-plus"></i>
+            </button>
             =
             <div class="item-price-total">Rp 30.000</div>
-            <button class="remove-item">
-              Delete
+            <button class="fa-regular fa-trash-can remove-item">
             </button>
           </div>
         </div>
@@ -167,8 +176,12 @@
     <div class="product-card hidden" id="product-card-template" x-data="products">
       <div class="product-card-inner">
         <div class=" product-icons">
-          <a class="shopping-bag-btn"><i data-feather="shopping-bag"></i></a>
-          <a class="item-detail-button" data-product="biji_toraja"><i data-feather="eye"></i></a>
+          <a class="shopping-bag-btn">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <a class="item-detail-button" data-product="biji_toraja">
+            <i class="fa-solid fa-info"></i>
+          </a>
         </div>
         <div class="product-image">
           <img src="img/product/product-1.png" alt="product-1">
@@ -176,11 +189,11 @@
         <div class="products-content">
           <h3>Coffe Beans 1</h3>
           <div class="product-stars">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
           </div>
           <div class="product-price" data-diskon="false">
             <span class="product-price-discount">IDR 30K</span>
@@ -210,18 +223,18 @@
 
       <form action="" name="kedai-kopi-form">
         <div class="input-group">
-          <i data-feather="users"></i>
+          <i class="fa-solid fa-user"></i>
           <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" name="nama"
             pattern="^([A-Za-z ])(?!\s+$).+" title="Masukkan nama yang valid (huruf alfabet dan spasi)"
             autocomplete="off" />
         </div>
         <div class="input-group">
-          <i data-feather="mail"></i>
+          <i class="fa-solid fa-envelope"></i>
           <input type="email" placeholder="Gmail" required spellcheck="false" name="email" minlength="15" maxlength="50"
             autocomplete="off" />
         </div>
         <div class="input-group">
-          <i data-feather="message-square"></i>
+          <i class="fa-solid fa-comment"></i>
           <input type="text" placeholder="Isi Pesan" minlength="15" maxlength="500" required spellcheck="false"
             pattern="^(?!\s+$).+" title="Masukkan Pesan yang valid (huruf alfabet dan spasi)" name="pesan"
             autocomplete="off" />
@@ -242,10 +255,18 @@
   <!-- Footer Start -->
   <footer>
     <div class="socials">
-      <a><i data-feather="instagram"></i></a>
-      <a><i data-feather="twitter"></i></a>
-      <a><i data-feather="facebook"></i></a>
-      <a><i data-feather="youtube"></i></a>
+      <a>
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a>
+        <i class="fa-brands fa-x-twitter"></i>
+      </a>
+      <a>
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+      <a>
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
     </div>
 
     <div class="links">
@@ -265,7 +286,9 @@
   <!-- Modal Box Item Detail Start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <a class="close-icon"><i data-feather="x"></i></a>
+      <a class="close-icon">
+        <i class="fa-solid fa-circle-xmark"></i>
+      </a>
       <div class="modal-content">
         <img src="img/product/product-1.png" alt="product-1" id="product-img">
         <div class="product-content">
@@ -276,18 +299,18 @@
             voluptate placeat in ullam, tenetur eligendi, voluptates porro inventore voluptatem.
           </p>
           <div class="product-stars" id="product-rating">
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
-            <i data-feather="star" class="star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
+            <i class="fa-solid fa-star star-full"></i>
           </div>
           <div class="product-price" id="product-prices" data-diskon="true">
             <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
             <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
           <a>
-            <i data-feather="shopping-bag"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
             <span>Masukkan Keranjang</span>
           </a>
         </div>
@@ -295,12 +318,6 @@
     </div>
   </div>
   <!-- Modal Box Item Detail End -->
-
-  <!-- Icons -->
-  <script>
-    feather.replace();
-  </script>
-
 
   <!-- Sweet Alert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.3/dist/sweetalert2.all.min.js"></script>
