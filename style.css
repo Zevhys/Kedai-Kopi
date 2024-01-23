@@ -83,12 +83,16 @@ body {
 
 .navbar .navbar-extra a {
   color: white;
-  margin: 0 0.5rem;
+  margin: 0.45rem;
 }
 
 .navbar .navbar-extra a:hover .icon {
   color: var(--primary);
   cursor: pointer;
+}
+
+.navbar .icon {
+  font-size: 1.35em;
 }
 
 #hamburger-menu {
@@ -191,11 +195,11 @@ body {
 }
 
 .shopping-bag .remove-item {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  margin-left: 1em;
   cursor: pointer;
   background: transparent;
+  font-size: 1.6em;
+ 
 }
 
 .prices-quantity {
@@ -207,7 +211,6 @@ body {
   font-weight: bold;
   max-width: 2em;
   text-align: center;
-
   appearance: textfield;
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
@@ -237,18 +240,19 @@ body {
 
 #shopping-bag-count {
   position: absolute;
-  bottom: 100%;
-  right: -0.75em;
+  bottom: 60%;
+  right: -0.90em;
   background: var(--primary);
   border-radius: 50%;
   padding: 0.1em;
   font-weight: bold;
-  min-width: 2em;
-  min-height: 2em;
+  min-width: 1.85em;
+  min-height: 1.85em;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: black;
 }
 
 .anim-pop {
@@ -496,12 +500,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.6em;
   cursor: pointer;
 }
 
 .products .product-icons a:hover {
   background-color: var(--primary);
   border: 1px solid var(--primary);
+  color: black;
 }
 
 .products .product-image {
@@ -523,7 +529,13 @@ body {
 }
 
 .star-full {
-  fill: yellow;
+  color: yellow;
+  
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 .product-price {
@@ -570,6 +582,10 @@ body {
   background-color: var(--bg);
   border: 1px solid #eee;
   padding-left: 2rem;
+}
+
+.contact .row form .input-group :first-child {
+  font-size: 2em;
 }
 
 .contact .row form .input-group input {
@@ -633,7 +649,7 @@ body {
 footer {
   background-color: var(--primary);
   text-align: center;
-  padding: 3rem 0 1rem;
+  padding: 3rem 0;
   margin-top: 3rem;
 }
 
@@ -645,8 +661,12 @@ footer .socials {
 footer .socials a {
   color: white;
   margin: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   transition: color 0.3s;
+}
+
+footer .socials a:not(:hover) {
+  filter: brightness(900);
 }
 
 footer .links a:hover {
@@ -880,6 +900,10 @@ footer .socials a:hover {
 
   .hero {
     --bgs: linear-gradient(#000c, #000c), url("img/header-bg.jpg");
+  }
+  
+  .shopping-bag.active {
+    width: 100vw;
   }
 }
 #swal2-html-container {
