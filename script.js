@@ -297,12 +297,6 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
     const qty_input = cart_item.getElementsByClassName("item-quantity")[0];
     const itm_total = cart_item.getElementsByClassName("item-price-total")[0];
 
-    // const total_item = (total_elem) => {
-    //   itm_total.textContent = rupiah.format(
-    //     current_items[product_id].qty * current_items[product_id].price
-    //   );
-    // };
-
     cart_item
       .getElementsByTagName("img")[0]
       .setAttribute("src", product.gambar);
@@ -317,18 +311,9 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
       .getElementsByClassName("remove-item")[0]
       .addEventListener("click", (e) => {
         current_items[product_id].qty = 0;
-        updateItemsCount();
+        updateItemsCount(true);
         cart_item.remove();
       });
-
-    // const qtyChange = (c) => {
-    //   qty_input.value = clamp(parseInt(qty_input.value, 10) + c, 1, 99);
-    //   current_items[product_id].qty = parseInt(qty_input.value, 10);
-    //   itm_total.textContent = rupiah.format(
-    //     current_items[product_id].qty * current_items[product_id].price
-    //   );
-    //   updateItemsCount();
-    // };
 
     cart_item
       .getElementsByClassName("qty-add")[0]
@@ -338,7 +323,7 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
         itm_total.textContent = rupiah.format(
           current_items[product_id].qty * current_items[product_id].price
         );
-        updateItemsCount();
+        updateItemsCount(true);
       });
 
     cart_item
@@ -349,7 +334,7 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
         itm_total.textContent = rupiah.format(
           current_items[product_id].qty * current_items[product_id].price
         );
-        updateItemsCount();
+        updateItemsCount(true);
       });
 
     current_items[product_id].qty = 1;
@@ -369,29 +354,31 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
     if (qty_input.value.length > 2) {
       qty_input.value = qty_input.value.slice(0, 2);
     }
-    if (set_qty === 0) {
-      current_items[product_id].qty = clamp(qty_input.value, 1, 99);
-    } else {
-      qty_inputty.value = set_qty;
-      current_items[product_id].qty = set_qty;
-    }
     itm_total.textContent = rupiah.format(
       current_items[product_id].qty * current_items[product_id].price
     );
-    updateItemsCount();
+    updateItemsCount(true);
   });
+
+  if (set_qty === 0) {
+    current_items[product_id].qty = clamp(qty_input.value, 1, 99);
+  } else {
+    qty_input.value = set_qty;
+    current_items[product_id].qty = set_qty;
+  }
 
   qty_input.value = current_items[product_id].qty;
   updateItemsCount(!from_storage);
 }
 
-// if (localStorage.getItem("current_items") != null) {
-//   const data = JSON.parse(localStorage.getItem("current_items"));
-//   for (const itm in data) {
-//     addCartItem(itm, data[itm].qty, true);
-//   }
-// }
+if (localStorage.getItem("current_items") != null) {
+  const data = JSON.parse(localStorage.getItem("current_items"));
+  for (const itm in data) {
+    console.log(data[itm].qty);
+    if (data[itm].qty != 0) {
+      addCartItem(itm, data[itm].qty, true);
+    }
+  }
+}
 
-// FIX: LocalStorage
 // TODO: Add/sub button hold down InputEvent
-// TODO: Migrasi ke FontAwesome
