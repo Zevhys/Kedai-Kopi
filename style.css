@@ -158,6 +158,13 @@ body {
 
 .shopping-bag.active {
   right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-bag-inner {
+  overflow-y: auto;
+  height: 400px;
 }
 
 .shopping-bag .cart-item {
@@ -166,7 +173,7 @@ body {
   align-items: center;
   gap: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px dashed #666;
+  border-bottom: 2px dashed black;
   position: relative;
 }
 
@@ -197,6 +204,19 @@ body {
 
 .shopping-bag-footer {
   font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+}
+
+hr {
+  border-bottom: 2px dashed black;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.shopping-bag-footer input,
+.shopping-bag-footer textarea {
+  background: gray;
 }
 
 .shopping-bag .remove-item {
