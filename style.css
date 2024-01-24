@@ -170,7 +170,12 @@ body {
   position: relative;
 }
 
+.shopping-bag .item-name {
+  display: flex;
+}
+
 .shopping-bag h3 {
+  flex-grow: 1;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
@@ -199,7 +204,7 @@ body {
   cursor: pointer;
   background: transparent;
   font-size: 1.6em;
- 
+  transform: translateY(-0.15em);
 }
 
 .prices-quantity {
@@ -241,7 +246,7 @@ body {
 #shopping-bag-count {
   position: absolute;
   bottom: 60%;
-  right: -0.90em;
+  right: -0.9em;
   background: var(--primary);
   border-radius: 50%;
   padding: 0.1em;
@@ -525,21 +530,14 @@ body {
 .products .product-stars {
   font-size: 1.7rem;
   padding: 0.8rem;
-  color: black;
 }
 
 .star-full {
   color: yellow;
-  
-  text-shadow:
-   -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
 }
 
 .product-price {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -744,6 +742,9 @@ footer .socials a:hover {
 .modal-container .close-icon {
   position: absolute;
   right: 1rem;
+  font-size: 2em;
+  transform: translateY(-0.45em);
+  font-weight: bold;
 }
 
 .modal-content {
@@ -772,6 +773,10 @@ footer .socials a:hover {
   color: white;
   margin-top: 1rem;
   padding: 1rem 1.6rem;
+}
+
+.modal-content a i {
+  transform: translateY(0.25em);
 }
 
 /* Media Queries */
@@ -901,7 +906,7 @@ footer .socials a:hover {
   .hero {
     --bgs: linear-gradient(#000c, #000c), url("img/header-bg.jpg");
   }
-  
+
   .shopping-bag.active {
     width: 100vw;
   }
