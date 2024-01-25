@@ -208,6 +208,8 @@ const product_rating = d.getElementById("product-rating");
 const product_discount = d.getElementById("product-price-discount");
 const product_price = d.getElementById("product-price");
 const product_prices = d.getElementById("product-prices");
+const product_add_cart = d.getElementsByClassName("add-to-cart")[0];
+
 function product_rating_reset() {
   const stars = product_rating.children;
   for (let q = 0; q < stars.length; q++) {
@@ -216,6 +218,7 @@ function product_rating_reset() {
 }
 function showDetail(btn) {
   let product = daftar_kopi[btn.getAttribute("data-product")];
+  // product_add_cart.removeEventListener("click");
   product_name.textContent = product.nama;
   product_desc.innerHTML = product.deskripsi;
   product_img.setAttribute("src", product.gambar);
@@ -231,6 +234,17 @@ function showDetail(btn) {
       .getElementsByClassName("star-full")
       [i].classList.add("hidden");
   }
+  product_add_cart.setAttribute(
+    "data-product",
+    btn.getAttribute("data-product")
+  );
+  product_add_cart.addEventListener("click", () => {
+    addCartItem(
+      btn.getAttribute("data-product"),
+      current_items[btn.getAttribute("data-product")].qty + 1,
+      false
+    );
+  });
 }
 
 // Shopping Cart
@@ -238,6 +252,7 @@ const shopping_bag_count = d.getElementById("shopping-bag-count");
 const shopping_bag = d.getElementsByClassName("shopping-bag-inner")[0];
 const shopping_bag_total = d.getElementById("current-items-total");
 const shopping_bag_empty = d.getElementsByClassName("shopping-bag-empty")[0];
+const shopping_bag_footer = d.getElementsByClassName("shopping-bag-footer")[0];
 const cart_item_template = d.getElementById("cart-item-template");
 let current_items = {};
 
@@ -265,6 +280,10 @@ function updateItemsCount(save = false) {
   shopping_bag_empty.classList.toggle(
     "hidden",
     shopping_bag_count.textContent != "0"
+  );
+  shopping_bag_footer.classList.toggle(
+    "hidden",
+    shopping_bag_count.textContent == "0"
   );
   shopping_bag_count.classList.remove("anim-pop");
   void shopping_bag_count.offsetWidth;
