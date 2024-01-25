@@ -161,11 +161,11 @@
   <section id="menu" class="menu">
     <h2><span>Menu</span> Kami</h2>
     <p>
-      Jelajahi keanekaragaman cita rasa kopi di menu kami, yang disajikan
+      Jelajahi keanekaragaman cita rasa kopi di menu kami yang disajikan
       dengan penuh dedikasi dan keahlian.
     </p>
     <div class="menu-card hidden" id="menu-card-template">
-      <img src="" alt="Gula Aren" class="menu-card-img" width="361" />
+      <img alt="Gula Aren" class="menu-card-img" width="361">
       <h3 class="menu-card-title">Loading item...</h3>
       <p class="menu-card-price">Loading item...</p>
     </div>
@@ -178,12 +178,10 @@
   <section class="products" id="products">
     <h2><span>Produk Unggulan</span> Kami</h2>
     <p>
-      Temukan keajaiban rasa dalam setiap tegukan dengan koleksi biji kopi unggulan kami. Pengalaman kopi berkualitas
-      tinggi
-      yang memikat, hanya dari yang terbaik untuk Anda.
+      Nikmati keajaiban kopi unggulan kami, Pengalaman berkualitas tinggi yang memikat.
     </p>
 
-    <div class="product-card hidden" id="product-card-template" x-data="products">
+    <div class="product-card hidden" id="product-card-template">
       <div class="product-card-inner">
         <div class=" product-icons">
           <a class="shopping-bag-btn">
@@ -236,24 +234,24 @@
           <i class="fa-solid fa-user"></i>
           <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" name="nama"
             pattern="^([A-Za-z ])(?!\s+$).+" title="Masukkan nama yang valid (huruf alfabet dan spasi)"
-            autocomplete="off" />
+            autocomplete="off">
         </div>
         <div class="input-group">
           <i class="fa-solid fa-envelope"></i>
           <input type="email" placeholder="Gmail" required spellcheck="false" name="email" minlength="15" maxlength="50"
-            autocomplete="off" />
+            autocomplete="off">
         </div>
         <div class="input-group">
           <i class="fa-solid fa-comment"></i>
           <input type="text" placeholder="Isi Pesan" minlength="15" maxlength="500" required spellcheck="false"
             pattern="^(?!\s+$).+" title="Masukkan Pesan yang valid (huruf alfabet dan spasi)" name="pesan"
-            autocomplete="off" />
+            autocomplete="off">
         </div>
         <div>
 
           <button id="submit-btn" type="submit" class="btn">
             <img src="https://s2.svgbox.net/loaders.svg?ic=bars&color=white" width="32" height="32" id="submit-btn-load"
-              class="hidden">
+              alt="Loading Spinner" class="hidden">
             <span id="submit-btn-msg">Kirim Pesan</span>
           </button>
         </div>
