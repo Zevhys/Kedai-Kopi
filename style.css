@@ -144,6 +144,7 @@ body {
   background-color: white;
   color: var(--bg);
   transition: 0.3s linear;
+  color: #000;
 }
 
 .shopping-bag-empty {
@@ -170,7 +171,7 @@ body {
 }
 
 .shopping-bag .cart-item {
-  margin-top: 0;
+  margin-top: 0.5em;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -420,6 +421,7 @@ hr {
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.6;
+  text-align: justify;
 }
 
 /* Menu Section */
@@ -434,7 +436,7 @@ hr {
   text-align: center;
   max-width: 30rem;
   margin: auto;
-  font-weight: 350;
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -560,7 +562,7 @@ hr {
 }
 
 #product-rating .star-full {
-  color: rgba(250, 250, 0, 1) !important;
+  color: #ffc107;
   font-size: 1.6em;
 }
 
@@ -793,6 +795,7 @@ footer .socials a:hover {
   margin-top: 1.2rem;
   text-align: justify;
   margin-bottom: 0.5em;
+  letter-spacing: 00.01em;
 }
 
 .add-to-cart {
@@ -931,13 +934,18 @@ footer .socials a:hover {
   }
 
   .hero {
-    --bgs: linear-gradient(#000c, #000c), url("img/header-bg.jpg");
+    --bgs: linear-gradient(#000c, #000b), url("img/header-bg.jpg");
   }
 
   .shopping-bag.active {
     width: 100vw;
   }
+
+  .about .row .content p {
+    letter-spacing: 00.01em;
+  }
 }
+
 #swal2-html-container {
   text-align: center;
 }
