@@ -218,7 +218,6 @@ function product_rating_reset() {
 }
 function showDetail(btn) {
   let product = daftar_kopi[btn.getAttribute("data-product")];
-  // product_add_cart.removeEventListener("click");
   product_name.textContent = product.nama;
   product_desc.innerHTML = product.deskripsi;
   product_img.setAttribute("src", product.gambar);
@@ -377,9 +376,6 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
     const itm_total_ = shopping_bag
       .querySelectorAll(`[data-product=${product_id}]`)[0]
       .getElementsByClassName("item-price-total")[0];
-    // console.log("========");
-    // console.log(qty_input.value);
-    // console.log(qty_input.value.length);
     if (qty_input.value.length > 2) {
       qty_input.value = qty_input.value.slice(0, 2);
     }
@@ -396,7 +392,6 @@ function addCartItem(product_id, set_qty = 0, from_storage = false) {
     itm_total_.textContent = rupiah.format(
       current_items[product_id].qty * current_items[product_id].price
     );
-    // console.log(current_items[product_id].qty);
     updateItemsCount(true);
   });
 
@@ -420,5 +415,3 @@ if (localStorage.getItem("current_items") != null) {
     }
   }
 }
-
-// TODO: Add/sub button hold down InputEvent
