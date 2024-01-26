@@ -35,6 +35,8 @@ d.addEventListener("click", function (e) {
     if (!sbg.contains(e.target) && !shoppingBag.contains(e.target)) {
       shoppingBag.classList.remove("active");
     }
+  } else {
+    checkout_form.reset();
   }
 });
 
@@ -415,3 +417,22 @@ if (localStorage.getItem("current_items") != null) {
     }
   }
 }
+
+// Validation Co Form
+const check_out_btn = document.querySelector(".co-btn");
+check_out_btn.disabled = true;
+
+const checkout_form = d.querySelector("#co-form");
+
+checkout_form.addEventListener("keyup", function () {
+  for (let i = 0; i < checkout_form.elements.length; i++) {
+    if (checkout_form.elements[i].value.length !== 0) {
+      check_out_btn.classList.remove("disabled");
+      check_out_btn.classList.add("disabled");
+    } else {
+      return false;
+    }
+  }
+  check_out_btn.disabled = false;
+  check_out_btn.classList.remove("disabled");
+});
