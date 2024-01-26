@@ -167,7 +167,7 @@ body {
 .shopping-bag-inner {
   margin-top: 1em;
   overflow-y: auto;
-  height: 200px;
+  height: 300px;
 }
 
 .shopping-bag .cart-item {
@@ -246,9 +246,14 @@ body {
   text-align: center;
 }
 
+#co-form .co-btn.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
 .shopping-bag-footer {
   font-weight: bold;
-  flex-grow: 1;
+  padding-top: 1em;
 }
 
 hr {
