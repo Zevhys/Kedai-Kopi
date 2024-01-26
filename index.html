@@ -98,16 +98,33 @@
       </div>
 
       <div class="shopping-bag-footer">
-        Total Harga :
-        <span id="current-items-total">Rp 23.456</span>
+        <div class="totalsP">
+          Total Harga :
+          <span id="current-items-total">Rp 23.456</span>
+        </div>
         <hr>
-        <form>
-          <label for="">Email :</label>
-          <input type="text"><br>
-          <label for="">Nama :</label>
-          <input type="text"><br>
-          <label for="">Catatan Tambahan :</label><br>
-          <textarea name="" id="" cols="30" rows="5"></textarea>
+        <form id="co-form">
+          <h4>Customer Detail</h4>
+
+          <label for="names">
+            <span>Nama</span>
+            <input type="text" name="names" id="names" placeholder="Nama" minlength="5" maxlength="30" required
+              pattern="[A-Za-z ]+" title="Masukkan nama yang valid (huruf alfabet dan spasi)">
+          </label>
+
+          <label for="emails">
+            <span>Email</span>
+            <input type="email" name="emails" id="emails" placeholder="Email" required minlength="5" maxlength="50">
+          </label>
+
+          <label for="catatan">
+            <span>Catatan</span>
+            <input type="text" name="catatan" id="catatan" placeholder="Catatan Tambahan" minlength="15" maxlength="500"
+              required pattern="[\s\S]+" title="Masukkan Pesan yang valid (huruf, angka, dan spasi)">
+          </label>
+
+
+          <button class="co-btn" type="submit" id="co-btn" value="checkout">Check Out</button>
         </form>
       </div>
     </div>
@@ -238,7 +255,7 @@
         </div>
         <div class="input-group">
           <i class="fa-solid fa-envelope"></i>
-          <input type="email" placeholder="Gmail" required spellcheck="false" name="email" minlength="15" maxlength="50"
+          <input type="email" placeholder="Email" required spellcheck="false" name="email" minlength="15" maxlength="50"
             autocomplete="off">
         </div>
         <div class="input-group">
