@@ -109,22 +109,22 @@
           <label for="names">
             <span>Nama</span>
             <input type="text" name="names" id="names" placeholder="Nama" minlength="5" maxlength="30" required
-              pattern="[A-Za-z ]+" title="Masukkan nama yang valid (huruf alfabet dan spasi)">
+              pattern="[A-Za-z ]+" title="Masukkan nama yang valid (huruf alfabet dan spasi)" spellcheck="false">
           </label>
 
           <label for="emails">
             <span>Email</span>
-            <input type="email" name="emails" id="emails" placeholder="Email" required minlength="5" maxlength="50">
+            <input type="email" name="emails" id="emails" placeholder="Email" required minlength="5" maxlength="50"
+              spellcheck="false">
           </label>
 
           <label for="catatan">
             <span>Catatan</span>
             <input type="text" name="catatan" id="catatan" placeholder="Catatan Tambahan" minlength="15" maxlength="500"
-              required pattern="[\s\S]+" title="Masukkan Pesan yang valid (huruf, angka, dan spasi)">
+              required pattern="[\s\S]+" title="Masukkan Pesan yang valid (huruf, angka, dan spasi)" spellcheck="false">
           </label>
 
-
-          <button class="co-btn" type="submit" id="co-btn" value="checkout">Check Out</button>
+          <button class="co-btn disabled" type="submit" id="co-btn" value="checkout">Check Out</button>
         </form>
       </div>
     </div>
