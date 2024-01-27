@@ -92,7 +92,7 @@ body {
 }
 
 .navbar .icon {
-  font-size: 1.35em;
+  font-size: 1.5em;
 }
 
 #hamburger-menu {
@@ -167,11 +167,12 @@ body {
 .shopping-bag-inner {
   margin-top: 1em;
   overflow-y: auto;
-  height: 400px;
+  /* height: 300px; */
+  flex-grow: 1;
 }
 
 .shopping-bag .cart-item {
-  margin-top: 0.5em;
+  margin-top: 1em;
   display: flex;
   align-items: center;
   gap: 1.5rem;
@@ -205,10 +206,55 @@ body {
   margin-left: 0.5em;
 }
 
+.totalsP {
+  text-align: center;
+}
+
+#co-form {
+  font-size: 1rem;
+  text-align: center;
+}
+
+#co-form label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+#co-form span {
+  flex-grow: 1;
+  text-align: left;
+  max-width: 5em;
+}
+
+#co-form input {
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+
+#co-form .co-btn {
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+#co-form .co-btn.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
 .shopping-bag-footer {
   font-weight: bold;
-  flex-grow: 1;
-  text-align: center;
+  padding-top: 1em;
 }
 
 hr {
@@ -521,10 +567,12 @@ hr {
   gap: 0.5rem;
 }
 
-.products .product-icons a {
+.products .product-icons .shopping-bag-btn,
+.products .product-icons .item-detail-button {
   width: 4rem;
   height: 4rem;
   color: white;
+  background-color: transparent;
   margin: 0.3rem;
   border: 1px solid #666;
   border-radius: 50%;
@@ -535,7 +583,8 @@ hr {
   cursor: pointer;
 }
 
-.products .product-icons a:hover {
+.products .product-icons .shopping-bag-btn:hover,
+.products .product-icons .item-detail-button:hover {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   color: black;
@@ -778,6 +827,7 @@ footer .socials a:hover {
   transform: translateY(-0.45em);
   font-weight: bold;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .modal-content {
@@ -796,7 +846,7 @@ footer .socials a:hover {
   margin-top: 1.2rem;
   text-align: justify;
   margin-bottom: 0.5em;
-  letter-spacing: 00.01em;
+  letter-spacing: 0.003em;
 }
 
 .add-to-cart {
@@ -943,7 +993,7 @@ footer .socials a:hover {
   }
 
   .about .row .content p {
-    letter-spacing: 00.01em;
+    letter-spacing: 00.02em;
   }
 }
 
