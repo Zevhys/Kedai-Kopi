@@ -436,3 +436,10 @@ checkout_form.addEventListener("keyup", function () {
   check_out_btn.disabled = false;
   check_out_btn.classList.remove("disabled");
 });
+
+// OffSet Cart Menu
+window.onresize = () => {
+  const navHeight = d.querySelector("nav.navbar").offsetHeight;
+  shoppingBag.style.height =
+    (d.documentElement.clientHeight - navHeight).toString() + "px";
+};
