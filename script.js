@@ -446,4 +446,7 @@ const resizeCartMenu = () => {
 window.onresize = () => {
   resizeCartMenu();
 };
+window.onscroll = () => {
+  resizeCartMenu();
+};
 resizeCartMenu();
