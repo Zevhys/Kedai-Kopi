@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Coffe Shop Website">
+  <meta name="CCBot" content="nofollow">
   <title>Breeze Brew</title>
 
   <!-- Sweet Alert -->
@@ -77,15 +78,17 @@
           </div>
           <div class="prices-quantity">
             <div class="item-price">IDR 30K</div>
-            X
-            <button class="btn-qty qty-sub">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-            <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
-            <button class="btn-qty qty-add">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-            =
+            <div class="price-calc">
+              X
+              <button class="btn-qty qty-sub">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
+              <button class="btn-qty qty-add">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              =
+            </div>
             <div class="item-price-total">Rp 30.000</div>
           </div>
         </div>
@@ -104,24 +107,24 @@
           <span id="current-items-total">Rp 23.456</span>
         </div>
         <hr>
-        <form id="co-form" method="post">
+        <form id="co-form" method="post" onsubmit="return false">
           <h4>Customer Detail</h4>
 
           <label for="names">
             <span>Nama</span>
-            <input type="text" name="names" id="names" placeholder="Nama" minlength="5" maxlength="30" required
+            <input type="text" name="names" id="names" placeholder="Budi" minlength="5" maxlength="30" required
               pattern="[A-Za-z ]+" title="Masukkan nama yang valid (huruf alfabet dan spasi)" spellcheck="false">
           </label>
 
           <label for="emails">
             <span>Email</span>
-            <input type="email" name="emails" id="emails" placeholder="Email" required minlength="5" maxlength="50"
-              spellcheck="false">
+            <input type="email" name="emails" id="emails" placeholder="Example@mail.com" required minlength="5"
+              maxlength="50" spellcheck="false">
           </label>
 
           <label for="catatan">
             <span>Catatan</span>
-            <input type="text" name="catatan" id="catatan" placeholder="Catatan Tambahan" minlength="15" maxlength="500"
+            <input type="text" name="catatan" id="catatan" placeholder="Tambahan" minlength="15" maxlength="500"
               required pattern="[\s\S]+" title="Masukkan Pesan yang valid (huruf, angka, dan spasi)" spellcheck="false">
           </label>
 
@@ -317,8 +320,8 @@
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
       <div class="modal-content">
-        <img src="img/product/product-1.png" alt="product-1" id="product-img">
         <div class="product-content">
+          <img src="img/product/product-1.png" alt="product-1" id="product-img">
           <h3 id="product-name">Product 1</h3>
           <p id="product-desc">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque incidunt repellendus ad aperiam <br>saepe
