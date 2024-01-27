@@ -155,7 +155,6 @@ body {
   justify-content: center;
   align-items: center;
   height: 100%;
-  transform: translateY(5em);
 }
 
 .shopping-bag.active {
@@ -167,7 +166,6 @@ body {
 .shopping-bag-inner {
   margin-top: 1em;
   overflow-y: auto;
-  /* height: 300px; */
   flex-grow: 1;
 }
 
@@ -179,6 +177,10 @@ body {
   padding-bottom: 1rem;
   border-bottom: 2px dashed black;
   position: relative;
+}
+
+.shopping-bag .item-detail {
+  width: 100%;
 }
 
 .shopping-bag .item-name {
@@ -211,7 +213,7 @@ body {
 }
 
 #co-form {
-  font-size: 1rem;
+  font-size: 1.25em;
   text-align: center;
 }
 
@@ -231,8 +233,14 @@ body {
 #co-form input {
   background-color: #ddd;
   padding: 5px;
+  padding-left: 0.55em;
   font-size: 1rem;
   width: 70%;
+}
+
+#co-form input::placeholder {
+  color: rgb(153, 132, 132);
+  opacity: 1;
 }
 
 #co-form .co-btn {
@@ -255,6 +263,7 @@ body {
 .shopping-bag-footer {
   font-weight: bold;
   padding-top: 1em;
+  padding-bottom: 1.5em;
 }
 
 hr {
@@ -279,6 +288,7 @@ hr {
 .prices-quantity {
   font-weight: bold;
   display: flex;
+  align-items: center;
 }
 
 .shopping-bag .item-quantity {
@@ -836,7 +846,8 @@ footer .socials a:hover {
 }
 
 .modal-content img {
-  height: 16.5rem;
+  height: 100%;
+  float: left;
   margin-right: 2rem;
 }
 
@@ -972,10 +983,6 @@ footer .socials a:hover {
   .modal-content {
     flex-wrap: wrap;
   }
-
-  .modal-content img {
-    margin-bottom: 2rem;
-  }
 }
 
 /* Mobile Phone */
@@ -985,7 +992,7 @@ footer .socials a:hover {
   }
 
   .hero {
-    --bgs: linear-gradient(#000c, #000b), url("img/header-bg.jpg");
+    --bgs: linear-gradient(#000b, #000b), url("img/header-bg.jpg");
   }
 
   .shopping-bag.active {
@@ -994,6 +1001,10 @@ footer .socials a:hover {
 
   .about .row .content p {
     letter-spacing: 00.02em;
+  }
+
+  .modal-content img {
+    height: 16.5rem;
   }
 }
 
