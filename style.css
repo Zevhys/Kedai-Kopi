@@ -167,7 +167,8 @@ body {
 .shopping-bag-inner {
   margin-top: 1em;
   overflow-y: auto;
-  height: 300px;
+  /* height: 300px; */
+  flex-grow: 1;
 }
 
 .shopping-bag .cart-item {
@@ -566,10 +567,12 @@ hr {
   gap: 0.5rem;
 }
 
-.products .product-icons a {
+.products .product-icons .shopping-bag-btn,
+.products .product-icons .item-detail-button {
   width: 4rem;
   height: 4rem;
   color: white;
+  background-color: transparent;
   margin: 0.3rem;
   border: 1px solid #666;
   border-radius: 50%;
@@ -580,7 +583,8 @@ hr {
   cursor: pointer;
 }
 
-.products .product-icons a:hover {
+.products .product-icons .shopping-bag-btn:hover,
+.products .product-icons .item-detail-button:hover {
   background-color: var(--primary);
   border: 1px solid var(--primary);
   color: black;
@@ -823,6 +827,7 @@ footer .socials a:hover {
   transform: translateY(-0.45em);
   font-weight: bold;
   cursor: pointer;
+  background-color: transparent;
 }
 
 .modal-content {
