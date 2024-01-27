@@ -56,8 +56,8 @@
     </div>
 
     <!-- Search From Start -->
-    <div class="search-form">
-      <input type="search" id="search-box" placeholder="Search Here...">
+    <div class="search-form" id="search-results">
+      <input type="search" id="search-box" placeholder="Search Here..." oninput="search()">
       <label for="search-box">
         <i class="fa-solid fa-magnifying-glass"></i>
       </label>
@@ -141,7 +141,7 @@
         Nikmati keharuman kopi pilihan kami, <br>
         sambil meresapi suasana yang tenang
       </p>
-      <a href="#" class="cta btn">Pesan Sekarang</a>
+      <a href="#products" class="cta btn"><b><i>Pesan Sekarang</i></b></a>
     </main>
   </section>
   <!-- Hero Section End -->
@@ -152,7 +152,7 @@
 
     <div class="row">
       <div class="about-img">
-        <img src="img/tentang-kami.jpg" alt="Tentang Kami" />
+        <img src="img/tentang-kami.jpg" alt="Tentang Kami">
       </div>
       <div class="content">
         <h3>Tertarik dengan keistimewaan kopi kami?</h3>
@@ -182,7 +182,7 @@
       dengan penuh dedikasi dan keahlian.
     </p>
     <div class="menu-card hidden" id="menu-card-template">
-      <img alt="Gula Aren" class="menu-card-img" width="361">
+      <img src="#" alt="Gula Aren" class="menu-card-img" width="361">
       <h3 class="menu-card-title">Loading item...</h3>
       <p class="menu-card-price">Loading item...</p>
     </div>
@@ -200,13 +200,13 @@
 
     <div class="product-card hidden" id="product-card-template">
       <div class="product-card-inner">
-        <div class=" product-icons">
-          <a class="shopping-bag-btn">
+        <div class="product-icons">
+          <button class="shopping-bag-btn">
             <i class="fa-solid fa-cart-shopping"></i>
-          </a>
-          <a class="item-detail-button" data-product="biji_toraja">
+          </button>
+          <button class="item-detail-button" data-product="biji_toraja">
             <i class="fa-solid fa-info"></i>
-          </a>
+          </button>
         </div>
         <div class="product-image">
           <img src="img/product/product-1.png" alt="product-1">
@@ -244,9 +244,10 @@
     <div class="row">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.0447507599315!2d114.62045807391704!3d-3.3391146413135626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de426ad88b70699%3A0xd64db9b1570ac5ea!2sJl.%20Simp.%20Dharma%20Bakti.%20II%2C%20Pemurus%20Luar%2C%20Kec.%20Banjarmasin%20Tim.%2C%20Kota%20Banjarmasin%2C%20Kalimantan%20Selatan%2070238!5e0!3m2!1sid!2sid!4v1699954786722!5m2!1sid!2sid"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+        allowfullscreen="" title="Peta Lokasi Kami" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        class="map"></iframe>
 
-      <form action="" name="kedai-kopi-form">
+      <form action="#" name="kedai-kopi-form">
         <div class="input-group">
           <i class="fa-solid fa-user"></i>
           <input type="text" placeholder="Nama" minlength="5" maxlength="30" required spellcheck="false" name="nama"
@@ -311,9 +312,9 @@
   <!-- Modal Box Item Detail Start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <a class="close-icon">
+      <button class="close-icon">
         <i class="fa-solid fa-circle-xmark"></i>
-      </a>
+      </button>
       <div class="modal-content">
         <img src="img/product/product-1.png" alt="product-1" id="product-img">
         <div class="product-content">
@@ -334,10 +335,10 @@
             <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
             <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
-          <a class="add-to-cart btn">
+          <button class="add-to-cart btn">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span>Masukkan Keranjang</span>
-          </a>
+            <span><b>Masukkan Keranjang</b></span>
+          </button>
         </div>
       </div>
     </div>
