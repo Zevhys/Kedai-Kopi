@@ -74,17 +74,17 @@
         <div class="item-detail">
           <div class="item-name">
             <h3>Product 1</h3>
-            <button class="fa-regular fa-trash-can remove-item"></button>
+            <button class="fa-regular fa-trash-can remove-item" name="remove"></button>
           </div>
           <div class="prices-quantity">
             <div class="item-price">IDR 30K</div>
             <div class="price-calc">
               X
-              <button class="btn-qty qty-sub">
+              <button class="btn-qty qty-sub" name="sub">
                 <i class="fa-solid fa-minus"></i>
               </button>
               <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
-              <button class="btn-qty qty-add">
+              <button class="btn-qty qty-add" name="add">
                 <i class="fa-solid fa-plus"></i>
               </button>
               =
@@ -128,7 +128,9 @@
               required pattern="[\s\S]+" title="Masukkan Pesan yang valid (huruf, angka, dan spasi)" spellcheck="false">
           </label>
 
-          <button class="co-btn disabled" type="submit" id="co-btn" value="checkout">Check Out</button>
+          <button class="co-btn disabled" type="submit" id="co-btn" value="checkout" name="checkout">
+            Check Out
+          </button>
         </form>
       </div>
     </div>
@@ -205,10 +207,10 @@
     <div class="product-card hidden" id="product-card-template">
       <div class="product-card-inner">
         <div class="product-icons">
-          <button class="shopping-bag-btn">
+          <button class="shopping-bag-btn" name="shopping-cart">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button class="item-detail-button" data-product="biji_toraja">
+          <button class="item-detail-button" data-product="biji_toraja" name="item-detail">
             <i class="fa-solid fa-info"></i>
           </button>
         </div>
@@ -271,7 +273,7 @@
         </div>
         <div>
 
-          <button id="submit-btn" type="submit" class="btn">
+          <button id="submit-btn" type="submit" class="btn" name="submit">
             <img src="https://s2.svgbox.net/loaders.svg?ic=bars&color=white" width="32" height="32" id="submit-btn-load"
               alt="Loading Spinner" class="hidden">
             <span id="submit-btn-msg">Kirim Pesan</span>
@@ -285,16 +287,16 @@
   <!-- Footer Start -->
   <footer>
     <div class="socials">
-      <a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">
         <i class="fa-brands fa-instagram"></i>
       </a>
-      <a>
+      <a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">
         <i class="fa-brands fa-x-twitter"></i>
       </a>
-      <a>
+      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener">
         <i class="fa-brands fa-facebook-f"></i>
       </a>
-      <a>
+      <a href="https://www.tiktok.com/id-ID/" target="_blank" rel="noreferrer noopener">
         <i class="fa-brands fa-tiktok"></i>
       </a>
     </div>
@@ -316,7 +318,7 @@
   <!-- Modal Box Item Detail Start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <button class="close-icon">
+      <button class="close-icon" name="close">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
       <div class="modal-content">
@@ -339,7 +341,7 @@
             <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
             <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
-          <button class="add-to-cart btn">
+          <button class="add-to-cart btn" name="add-to-cart">
             <i class="fa-solid fa-cart-shopping"></i>
             <span><b>Masukkan Keranjang</b></span>
           </button>
