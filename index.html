@@ -74,17 +74,17 @@
         <div class="item-detail">
           <div class="item-name">
             <h3>Product 1</h3>
-            <button class="fa-regular fa-trash-can remove-item" name="remove"></button>
+            <button class="fa-regular fa-trash-can remove-item"></button>
           </div>
           <div class="prices-quantity">
             <div class="item-price">IDR 30K</div>
             <div class="price-calc">
               X
-              <button class="btn-qty qty-sub" name="sub">
+              <button class="btn-qty qty-sub">
                 <i class="fa-solid fa-minus"></i>
               </button>
               <input type="number" pattern="^[0-9]" maxlength="2" value="1" class="item-quantity">
-              <button class="btn-qty qty-add" name="add">
+              <button class="btn-qty qty-add">
                 <i class="fa-solid fa-plus"></i>
               </button>
               =
@@ -207,10 +207,10 @@
     <div class="product-card hidden" id="product-card-template">
       <div class="product-card-inner">
         <div class="product-icons">
-          <button class="shopping-bag-btn" name="shopping-cart">
+          <button class="shopping-bag-btn" data-product="biji_toraja" aria-label="Add to Shopping Bag">
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
-          <button class="item-detail-button" data-product="biji_toraja" name="item-detail">
+          <button class="item-detail-button" data-product="biji_toraja" aria-label="View Item Detail">
             <i class="fa-solid fa-info"></i>
           </button>
         </div>
@@ -273,7 +273,7 @@
         </div>
         <div>
 
-          <button id="submit-btn" type="submit" class="btn" name="submit">
+          <button id="submit-btn" type="submit" class="btn">
             <img src="https://s2.svgbox.net/loaders.svg?ic=bars&color=white" width="32" height="32" id="submit-btn-load"
               alt="Loading Spinner" class="hidden">
             <span id="submit-btn-msg">Kirim Pesan</span>
@@ -287,19 +287,20 @@
   <!-- Footer Start -->
   <footer>
     <div class="socials">
-      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener">
+      <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
         <i class="fa-brands fa-instagram"></i>
       </a>
-      <a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">
+      <a href="https://twitter.com/" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
         <i class="fa-brands fa-x-twitter"></i>
       </a>
-      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener">
+      <a href="https://www.facebook.com/" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
         <i class="fa-brands fa-facebook-f"></i>
       </a>
-      <a href="https://www.tiktok.com/id-ID/" target="_blank" rel="noreferrer noopener">
+      <a href="https://www.tiktok.com/id-ID/" target="_blank" rel="noreferrer noopener" aria-label="TikTok">
         <i class="fa-brands fa-tiktok"></i>
       </a>
     </div>
+
 
     <div class="links">
       <a href="#home">Home</a>
@@ -318,7 +319,7 @@
   <!-- Modal Box Item Detail Start -->
   <div class="modal" id="item-detail-modal">
     <div class="modal-container">
-      <button class="close-icon" name="close">
+      <button class="close-icon">
         <i class="fa-solid fa-circle-xmark"></i>
       </button>
       <div class="modal-content">
@@ -341,7 +342,7 @@
             <span id="product-price-discount" class="product-price-discount">IDR 30K</span>
             <span id="product-price" class="product-price-base">IDR 55K</span>
           </div>
-          <button class="add-to-cart btn" name="add-to-cart">
+          <button class="add-to-cart btn">
             <i class="fa-solid fa-cart-shopping"></i>
             <span><b>Masukkan Keranjang</b></span>
           </button>
