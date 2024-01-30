@@ -440,8 +440,7 @@ checkout_form.addEventListener("keyup", function () {
 // OffSet Cart Menu
 const resizeCartMenu = () => {
   const navHeight = d.querySelector("nav.navbar").offsetHeight;
-  shoppingBag.style.height =
-    (d.documentElement.clientHeight - navHeight).toString() + "px";
+  shoppingBag.style.height = (window.innerHeight - navHeight).toString() + "px";
 };
 window.onresize = () => {
   resizeCartMenu();
