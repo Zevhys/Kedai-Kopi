@@ -424,7 +424,7 @@ check_out_btn.disabled = true;
 
 const checkout_form = d.querySelector("#co-form");
 
-checkout_form.addEventListener("keyup", function () {
+checkout_form.addEventListener("input", function () {
   for (let i = 0; i < checkout_form.elements.length; i++) {
     if (checkout_form.elements[i].value.length !== 0) {
       check_out_btn.classList.remove("disabled");
@@ -449,3 +449,7 @@ window.onscroll = () => {
   resizeCartMenu();
 };
 resizeCartMenu();
+
+d.getElementById("co-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
