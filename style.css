@@ -439,7 +439,6 @@ hr {
   display: inline-block;
   padding: 1rem 3rem;
   font-size: 1.4rem;
-  color: white;
   background-color: var(--primary);
   border-radius: 0.5rem;
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
@@ -703,7 +702,7 @@ hr {
   align-items: center;
   padding: 0.8em 2em;
   font-size: 1.7rem;
-  color: white;
+  color: black;
   background-color: var(--primary);
   cursor: pointer;
   border-radius: 4px;
@@ -758,7 +757,7 @@ footer {
 .wrapper {
   width: 35rem;
   margin: auto;
-  margin-bottom: 2.5em;
+  margin-bottom: 2em;
   font-size: 0.9em;
 }
 
