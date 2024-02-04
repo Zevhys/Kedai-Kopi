@@ -3,37 +3,37 @@ const menu_kopi = {
   gula_aren: {
     nama: "Gula Aren",
     harga: 15000,
-    gambar: "img/Menu/1.jpg",
+    gambar: "img/Menu/1.webp",
   },
 
   espresso: {
     nama: "Espresso",
     harga: 17000,
-    gambar: "img/Menu/2.jpg",
+    gambar: "img/Menu/2.webp",
   },
 
   latte: {
     nama: "Latte",
     harga: 20000,
-    gambar: "img/Menu/3.jpg",
+    gambar: "img/Menu/3.webp",
   },
 
   macchiato: {
     nama: "Macchiato",
     harga: 16000,
-    gambar: "img/Menu/4.jpg",
+    gambar: "img/Menu/4.webp",
   },
 
   mocha: {
     nama: "Mocha",
     harga: 18000,
-    gambar: "img/Menu/5.jpg",
+    gambar: "img/Menu/5.webp",
   },
 
   frappe: {
     nama: "Frappe",
     harga: 25000,
-    gambar: "img/Menu/6.jpg",
+    gambar: "img/Menu/6.webp",
   },
 };
 
@@ -47,7 +47,7 @@ const daftar_kopi = {
     harga: 30000,
     diskon: 0.15,
     tersedia: true,
-    gambar: "img/product/product-1.png",
+    gambar: "img/product/product-1.webp",
   },
 
   biji_luwak: {
@@ -58,7 +58,7 @@ const daftar_kopi = {
     harga: 45000,
     diskon: 0.1,
     tersedia: true,
-    gambar: "img/product/product-2.png",
+    gambar: "img/product/product-2.webp",
   },
 
   biji_flores: {
@@ -69,6 +69,6 @@ const daftar_kopi = {
     harga: 50000,
     diskon: 0.11,
     tersedia: true,
-    gambar: "img/product/product-3.png",
+    gambar: "img/product/product-3.webp",
   },
 };

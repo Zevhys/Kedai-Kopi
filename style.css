@@ -388,11 +388,11 @@ hr {
 .hero {
   --bgs: linear-gradient(#0006, #0006),
     linear-gradient(to right, #000 0%, transparent 100%),
-    url("img/header-bg.jpg");
+    url("img/header-bg.webp");
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background-image: url("img/header-bg.jpg");
+  background-image: url("img/header-bg.webp");
   background: var(--bgs);
   background-repeat: no-repeat;
   background-size: cover;
@@ -1058,7 +1058,7 @@ footer .credit a {
   }
 
   .hero {
-    --bgs: linear-gradient(#000b, #000b), url("img/header-bg.jpg");
+    --bgs: linear-gradient(#000b, #000b), url("img/header-bg.webp");
   }
 
   .shopping-bag.active {
