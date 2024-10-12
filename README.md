@@ -10,7 +10,7 @@ Welcome to Breeze Brew, where the aroma of freshly brewed coffee meets the tranq
 ![](https://img.shields.io/badge/Google%20Sheets-34A853?style=flat-square&logo=googlesheets&logoColor=ffffff)
 ![](https://img.shields.io/badge/Google%20Maps-4285F4?style=flat-square&logo=googlemaps&logoColor=ffffff)
 
-#
+# Collaborator
 > [!NOTE]  
 > <b>I am currently working on a project in collaboration with my friend, [@nndda](https://github.com/nndda)</b>
 
