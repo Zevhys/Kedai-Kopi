@@ -1,5 +1,5 @@
 # _Breeze Brew_ 
-[![Author](http://img.shields.io/badge/author-@Zevhys-blue.svg)](https://www.linkedin.com/in/rakha-djauhari/) [![GitHub license](https://img.shields.io/github/license/Zevhys/Kedai-Kopi)](https://github.com/Zevhys/Kedai-Kopi/blob/main/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/Zevhys/Kedai-Kopi) [![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen.svg)](https://github.com/Zevhys/Kedai-Kopi/issues) [![Pull Requests Welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen.svg)](https://github.com/Zevhys/Kedai-Kopi/pulls)
+[![Author](http://img.shields.io/badge/author-@Zevhys-blue.svg)](https://www.linkedin.com/in/rakha-djauhari/) ![Created](https://img.shields.io/badge/Created-13--Nov--2023-blue.svg) ![GitHub repo size](https://img.shields.io/github/repo-size/Zevhys/Kedai-Kopi) [![GitHub license](https://img.shields.io/github/license/Zevhys/Kedai-Kopi)](https://github.com/Zevhys/Kedai-Kopi/blob/main/LICENSE) [![Issues Welcome](https://img.shields.io/badge/issues-welcome-brightgreen.svg)](https://github.com/Zevhys/Kedai-Kopi/issues) [![Pull Requests Welcome](https://img.shields.io/badge/pull%20requests-welcome-brightgreen.svg)](https://github.com/Zevhys/Kedai-Kopi/pulls)
 
 Welcome to Breeze Brew, where the aroma of freshly brewed coffee meets the tranquility of a serene ambiance. This project is a stylish and user-friendly website for a coffee shop, designed to provide an immersive experience for coffee enthusiasts.
 
@@ -19,4 +19,3 @@ Welcome to Breeze Brew, where the aroma of freshly brewed coffee meets the tranq
 # Collaborator
 > [!NOTE]  
 > <b>I am currently working on a project in collaboration with my friend, [@nndda](https://github.com/nndda)</b>
-
