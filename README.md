@@ -19,3 +19,6 @@ Welcome to Breeze Brew, where the aroma of freshly brewed coffee meets the tranq
 # Collaborator
 > [!NOTE]  
 > <b>I am currently working on a project in collaboration with my friend, [@nndda](https://github.com/nndda)</b>
+
+# Contribution
+Contributions are welcome! If you have suggestions for improvements or want to report an issue, feel free to open a pull request or create an issue. Thank you for helping to make this project better!
